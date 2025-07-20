@@ -93,10 +93,10 @@ const NavbarB = () => {
                             {accate &&
                                 <div className=" absolute top-[22px] right-0">
                                     <div className="bg-white hover:bg-black hover:text-white py-4 px-[59px] cursor-pointer">
-                                        <p className='text-black text-[14px] font-dm font-bold w-[84px] '>My Account</p>
+                                        <p className='text-black hover:text-white text-[14px] font-dm font-bold w-[84px] '>My Account</p>
                                     </div>
-                                    <div className="bg-white hover:bg-black hover:text-white py-4 px-[73px] cursor-pointer">
-                                        <p className='text-black text-[14px] font-dm font-bold w-[54px] text-center'>Log Out</p>
+                                    <div className="">
+                                        <p className='text-black text-[14px] font-dm font-bold w-[-1px] text-center bg-white hover:bg-black hover:text-white py-4 px-[73px] cursor-pointer'>Log Out</p>
                                     </div>
                                 </div>
                             }
