@@ -3,11 +3,22 @@ import { IoSearch } from "react-icons/io5";
 import { FaUser } from "react-icons/fa6";
 import { FaShoppingCart } from "react-icons/fa";
 import { FaCaretRight } from "react-icons/fa";
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 
 const NavbarB = () => {
+    let cateref = useRef()
     let [cate,setCeta] = useState(false)
+    useEffect(()=>{
+        document.addEventListener("click" ,(e)=>{
+        //    console.log(cateref.current.contains(e.target));
+           if(cateref.current.contains(e.target) == true){
+            setCeta(!cate)
+           }else{
+            setCeta(false)
+           }
+        },[cate])
+    })
 
     return (
         <>
@@ -15,11 +26,12 @@ const NavbarB = () => {
                 <div className="lg:w-10/12 mx-auto w-11/12">
                     <div className="lg:flex items-center">
                         <div className="lg:w-2/7 relative">
-                            <div className="flex items-center" >
+                            <div className="flex items-center " >
                                 <img src={categoryIcon} alt="categoryIcon" />
-                                <p className='text-[#262626] text-[14px] font-dm font-normal pl-2 'onClick={()=>setCeta(!cate)}>Shop by Category</p>
+                                <p className='text-[#262626] text-[14px] font-dm font-normal pl-2 cursor-pointer' ref={cateref}>Shop by Category</p>
                             </div>
-                            <div className={`absolute top-9 left-0 duration-200 ease-in-out ${cate == true ? "block" : "hidden"}`}>
+                            {cate && 
+                            <div className={`absolute top-9 left-0 duration-200 ease-in-out`}>
                                 <div className="bg-[#2D2D2D] pt-[16px] pl-[20px] pr-[23px]">
                                      <ul>
                                        <div className="flex items-center border-b-2 border-[#ffffff42] pb-3">
@@ -49,12 +61,13 @@ const NavbarB = () => {
                                      </ul>
                                 </div>
                             </div>
+                            }
                         </div>
                         <div className="lg:w-4/7">
                             <div className="flex">
                                 <div className="relative">
-                                    <form action="#">
-                                        <input type="text" placeholder='Search Products' className='lg:pt-[16px] lg:pb-[16px] lg:pl-[21px] lg:pr-[300px] border-none bg-white' />
+                                    <form action="#" className=''>
+                                        <input type="text" placeholder='Search Products' className='border-none bg-white py-4 lg:pl-5 lg:w-[560px] outline-0' />
                                     </form>
                                     <IoSearch className='absolute top-4 right-3 lg:text-[24px]' />
                                 </div>
@@ -62,8 +75,8 @@ const NavbarB = () => {
                         </div>
                         <div className="lg:w-1/7">
                             <div className="flex justify-end">
-                                <FaUser />
-                                <FaShoppingCart className='ml-7' />
+                                <FaUser className='cursor-pointer' />
+                                <FaShoppingCart className='ml-7 cursor-pointer' />
                             </div>
                         </div>
                     </div>
