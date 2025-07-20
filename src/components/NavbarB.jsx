@@ -8,17 +8,22 @@ import { useEffect, useRef, useState } from 'react';
 
 const NavbarB = () => {
     let cateref = useRef()
+    let accateref = useRef()
     let [cate,setCeta] = useState(false)
-    useEffect(()=>{
+    let [accate,setacCeta] = useState(false)
+
         document.addEventListener("click" ,(e)=>{
-        //    console.log(cateref.current.contains(e.target));
            if(cateref.current.contains(e.target) == true){
             setCeta(!cate)
            }else{
             setCeta(false)
            }
-        },[cate])
-    })
+           if(accateref.current.contains(e.target) == true){
+            setacCeta(!accate)
+           }else{
+            setacCeta(false)
+           }
+        });
 
     return (
         <>
@@ -75,7 +80,19 @@ const NavbarB = () => {
                         </div>
                         <div className="lg:w-1/7">
                             <div className="flex justify-end">
-                                <FaUser className='cursor-pointer' />
+                                <div className="relative">
+                                    <FaUser className='cursor-pointer 'ref={accateref} />
+                                    {accate &&
+                                    <div className=" absolute top-[22px] right-0">
+                                        <div className="bg-white hover:bg-black py-4 px-[59px] cursor-pointer">
+                                            <p className='text-black hover:text-white text-[14px] font-dm font-bold w-[84px] '>My Account</p>
+                                        </div>
+                                        <div className="bg-white hover:bg-black py-4 px-[73px] cursor-pointer">
+                                            <p className='text-black text-[14px] font-dm font-bold w-[54px] text-center'>Log Out</p>
+                                        </div>
+                                    </div>
+                                    }
+                                </div>
                                 <FaShoppingCart className='ml-7 cursor-pointer' />
                             </div>
                         </div>
