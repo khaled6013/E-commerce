@@ -44,7 +44,7 @@ const NavbarB = () => {
                                 <p className='text-[#262626] lg:text-[14px] text-[13px] font-dm font-normal pl-2 cursor-pointer' ref={cateref}>Shop by Category</p>
                             </div>
                             {cate &&
-                                <div className={`absolute top-9 left-0 duration-200 ease-in-out`}>
+                                <div className={`absolute top-9 left-0 duration-200 ease-in-out z-99`}>
                                     <div className="bg-[#2D2D2D] pt-[16px] pl-[20px] pr-[23px]">
                                         <ul>
                                             <div className="flex items-center border-b-2 border-[#ffffff42] pb-3">
@@ -91,7 +91,7 @@ const NavbarB = () => {
                                 <div className="relative">
                                     <FaUser className='cursor-pointer ' ref={accateref} />
                                     {accate &&
-                                        <div className=" absolute top-[22px] right-0">
+                                        <div className=" absolute top-[22px] right-0 z-99">
                                             <div className="bg-black py-4 px-[59px] cursor-pointer">
                                                 <p className='text-white text-[14px] font-dm font-bold w-[84px] '>My Account</p>
                                             </div>
@@ -104,7 +104,7 @@ const NavbarB = () => {
                                 <div className="relative">
                                     <FaShoppingCart className='ml-7 cursor-pointer' ref={accTwoateref} />
                                     {accateTwo &&
-                                        <div className="absolute top-8 lg:right-[-30px] right-[-20px]">
+                                        <div className="absolute top-8 lg:right-[-30px] right-[-20px] z-99">
                                             <div className="bg-[#F5F5F3] py-5 w-[358px] pl-5">
                                                 <div className="flex items-center relative">
                                                     <div className="h-[80px] w-[80px] bg-[#979797]"></div>
@@ -115,7 +115,7 @@ const NavbarB = () => {
                                                     <div className=""><RxCross2 className='absolute top-[40%] right-5 cursor-pointer' /></div>
                                                 </div>
                                             </div>
-                                            <div className="pt-[14px] w-[358px] pl-5 pb-[36px]">
+                                            <div className="pt-[14px] w-[358px] pl-5 pb-[36px] bg-[#FFff]">
                                                 <div className="">
                                                     <span className='text-[#767676] text-[16px] font-dm font-normal'>Subtotal:</span><span className='text-[#262626] text-[14px] font-dm font-bold'>$44.00</span>
                                                 </div>
