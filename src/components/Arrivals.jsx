@@ -59,10 +59,126 @@ const Arrivals = () => {
                             <p className="text-[#767676] text-[16px] font-normal font-dm">$44.00</p>
                         </div>
                         <div className="absolute top-2 left-2">
-                          <p className="text-[#FFFFFF] text-[14px] font-dm font-bold py-[7px] px-[28px] bg-black cursor-pointer">New</p>
+                          <p className="text-[#FFFFFF]  text-[14px] font-dm font-bold py-[7px] px-[28px] bg-black hover:bg-[#2e2b2b] cursor-pointer">New</p>
                         </div>
-                        <div className="absolute left-0 bottom-9">
-                          <div className="w-[270px] h-[0px] group-hover:h-[140px] duration-300 ease-in-out bg-[#FFFFFF]">
+                        <div className="absolute left-0 bottom-[50px]">
+                          <div className="w-[270px] h-[0px] group-hover:h-[130px] duration-300 ease-in-out bg-[#FFFFFF]">
+                            <div className="pt-[26px] opacity-0 group-hover:opacity-95">
+                              <div className="flex items-center justify-end mr-3">
+                                 <p className="text-[#262626] hover:text-[#767676] text-[15px] font-dm font-bold hover:font-normal pr-2 cursor-pointer">Add to Wish List</p>
+                                 <FaHeart className="" />
+                              </div>
+                              <div className="flex items-center justify-end mr-3 mt-[16px]">
+                                <FaCodeCompare className=""/>
+                              </div>
+                               <div className="flex items-center justify-end mr-3 mt-[16px]">
+                                 <p className="text-[#262626] hover:text-[#767676] text-[15px] font-dm font-bold hover:font-normal pr-2 cursor-pointer">Add to Cart</p>
+                                 <FaShoppingCart />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                  </div>
+                  <div className=" !w-[290px] relative group">
+                        <div className="w-full ">
+                            <img src={ariImg} alt="" className="w-full" />
+                        </div>
+                        <div className="flex justify-between mt-5 z-10">
+                            <p className="text-[#262626] text-[16px] font-dm font-bold">Basic Crew  Neck Tee</p>
+                            <p className="text-[#767676] text-[16px] font-normal font-dm">$44.00</p>
+                        </div>
+                        <div className="absolute top-2 left-2">
+                          <p className="text-[#FFFFFF]  text-[14px] font-dm font-bold py-[7px] px-[28px] bg-black hover:bg-[#2e2b2b] cursor-pointer">New</p>
+                        </div>
+                        <div className="absolute left-0 bottom-[50px]">
+                          <div className="w-[270px] h-[0px] group-hover:h-[130px] duration-300 ease-in-out bg-[#FFFFFF]">
+                            <div className="pt-[26px] opacity-0 group-hover:opacity-95">
+                              <div className="flex items-center justify-end mr-3">
+                                 <p className="text-[#262626] hover:text-[#767676] text-[15px] font-dm font-bold hover:font-normal pr-2 cursor-pointer">Add to Wish List</p>
+                                 <FaHeart className="" />
+                              </div>
+                              <div className="flex items-center justify-end mr-3 mt-[16px]">
+                                <FaCodeCompare className=""/>
+                              </div>
+                               <div className="flex items-center justify-end mr-3 mt-[16px]">
+                                 <p className="text-[#262626] hover:text-[#767676] text-[15px] font-dm font-bold hover:font-normal pr-2 cursor-pointer">Add to Cart</p>
+                                 <FaShoppingCart />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                  </div>
+                  <div className=" !w-[290px] relative group">
+                        <div className="w-full ">
+                            <img src={ariImg} alt="" className="w-full" />
+                        </div>
+                        <div className="flex justify-between mt-5 z-10">
+                            <p className="text-[#262626] text-[16px] font-dm font-bold">Basic Crew  Neck Tee</p>
+                            <p className="text-[#767676] text-[16px] font-normal font-dm">$44.00</p>
+                        </div>
+                        <div className="absolute top-2 left-2">
+                          <p className="text-[#FFFFFF]  text-[14px] font-dm font-bold py-[7px] px-[28px] bg-black hover:bg-[#2e2b2b] cursor-pointer">New</p>
+                        </div>
+                        <div className="absolute left-0 bottom-[50px]">
+                          <div className="w-[270px] h-[0px] group-hover:h-[130px] duration-300 ease-in-out bg-[#FFFFFF]">
+                            <div className="pt-[26px] opacity-0 group-hover:opacity-95">
+                              <div className="flex items-center justify-end mr-3">
+                                 <p className="text-[#262626] hover:text-[#767676] text-[15px] font-dm font-bold hover:font-normal pr-2 cursor-pointer">Add to Wish List</p>
+                                 <FaHeart className="" />
+                              </div>
+                              <div className="flex items-center justify-end mr-3 mt-[16px]">
+                                <FaCodeCompare className=""/>
+                              </div>
+                               <div className="flex items-center justify-end mr-3 mt-[16px]">
+                                 <p className="text-[#262626] hover:text-[#767676] text-[15px] font-dm font-bold hover:font-normal pr-2 cursor-pointer">Add to Cart</p>
+                                 <FaShoppingCart />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                  </div>
+                  <div className=" !w-[290px] relative group">
+                        <div className="w-full ">
+                            <img src={ariImg} alt="" className="w-full" />
+                        </div>
+                        <div className="flex justify-between mt-5 z-10">
+                            <p className="text-[#262626] text-[16px] font-dm font-bold">Basic Crew  Neck Tee</p>
+                            <p className="text-[#767676] text-[16px] font-normal font-dm">$44.00</p>
+                        </div>
+                        <div className="absolute top-2 left-2">
+                          <p className="text-[#FFFFFF]  text-[14px] font-dm font-bold py-[7px] px-[28px] bg-black hover:bg-[#2e2b2b] cursor-pointer">New</p>
+                        </div>
+                        <div className="absolute left-0 bottom-[50px]">
+                          <div className="w-[270px] h-[0px] group-hover:h-[130px] duration-300 ease-in-out bg-[#FFFFFF]">
+                            <div className="pt-[26px] opacity-0 group-hover:opacity-95">
+                              <div className="flex items-center justify-end mr-3">
+                                 <p className="text-[#262626] hover:text-[#767676] text-[15px] font-dm font-bold hover:font-normal pr-2 cursor-pointer">Add to Wish List</p>
+                                 <FaHeart className="" />
+                              </div>
+                              <div className="flex items-center justify-end mr-3 mt-[16px]">
+                                <FaCodeCompare className=""/>
+                              </div>
+                               <div className="flex items-center justify-end mr-3 mt-[16px]">
+                                 <p className="text-[#262626] hover:text-[#767676] text-[15px] font-dm font-bold hover:font-normal pr-2 cursor-pointer">Add to Cart</p>
+                                 <FaShoppingCart />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                  </div>
+                  <div className=" !w-[290px] relative group">
+                        <div className="w-full ">
+                            <img src={ariImg} alt="" className="w-full" />
+                        </div>
+                        <div className="flex justify-between mt-5 z-10">
+                            <p className="text-[#262626] text-[16px] font-dm font-bold">Basic Crew  Neck Tee</p>
+                            <p className="text-[#767676] text-[16px] font-normal font-dm">$44.00</p>
+                        </div>
+                        <div className="absolute top-2 left-2">
+                          <p className="text-[#FFFFFF]  text-[14px] font-dm font-bold py-[7px] px-[28px] bg-black hover:bg-[#2e2b2b] cursor-pointer">New</p>
+                        </div>
+                        <div className="absolute left-0 bottom-[50px]">
+                          <div className="w-[270px] h-[0px] group-hover:h-[130px] duration-300 ease-in-out bg-[#FFFFFF]">
                             <div className="pt-[26px] opacity-0 group-hover:opacity-95">
                               <div className="flex items-center justify-end mr-3">
                                  <p className="text-[#262626] hover:text-[#767676] text-[15px] font-dm font-bold hover:font-normal pr-2 cursor-pointer">Add to Wish List</p>
