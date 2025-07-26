@@ -48,8 +48,9 @@ const Arrivals = () => {
        </div>
          <div className="w-full lg:mt-[40px]">
             <Slider {...settings} className="gap-3" >
-                  <div className=" !w-[270px] relative group">
-                        <div className="w-full">
+                 
+                  <div className=" !w-[290px] relative ">
+                        <div className="w-full group">
                             <img src={ariImg} alt="" className="w-full cursor-pointer" />
                         </div>
                         <div className="flex justify-between mt-5">
@@ -60,7 +61,7 @@ const Arrivals = () => {
                           <p className="text-[#FFFFFF] text-[14px] font-dm font-bold py-[7px] px-[28px] bg-black">New</p>
                         </div>
                         <div className="absolute left-0 bottom-9">
-                          <div className="w-[270px] h-[0px] group-hover:h-[140px] bg-[#FFFFFF]">
+                          <div className="w-[270px] h-[0px] group-hover:h-[140px] duration-300 ease-in-out bg-[#FFFFFF]">
                             <div className="pt-[26px] opacity-0 group-hover:opacity-95">
                               <div className="flex items-center justify-end mr-3">
                                  <p className="text-[#262626] hover:text-[#767676] text-[15px] font-dm font-bold hover:font-normal pr-2 cursor-pointer">Add to Wish List</p>
@@ -77,8 +78,8 @@ const Arrivals = () => {
                           </div>
                         </div>
                   </div>
-                  <div className=" !w-[270px] relative group">
-                        <div className="w-full">
+                  <div className=" !w-[290px] relative ">
+                        <div className="w-full group">
                             <img src={ariImg} alt="" className="w-full cursor-pointer" />
                         </div>
                         <div className="flex justify-between mt-5">
@@ -89,7 +90,7 @@ const Arrivals = () => {
                           <p className="text-[#FFFFFF] text-[14px] font-dm font-bold py-[7px] px-[28px] bg-black">New</p>
                         </div>
                         <div className="absolute left-0 bottom-9">
-                          <div className="w-[270px] h-[0px] group-hover:h-[140px] bg-[#FFFFFF]">
+                          <div className="w-[270px] h-[0px] group-hover:h-[140px] duration-300 ease-in-out bg-[#FFFFFF]">
                             <div className="pt-[26px] opacity-0 group-hover:opacity-95">
                               <div className="flex items-center justify-end mr-3">
                                  <p className="text-[#262626] hover:text-[#767676] text-[15px] font-dm font-bold hover:font-normal pr-2 cursor-pointer">Add to Wish List</p>
@@ -106,8 +107,8 @@ const Arrivals = () => {
                           </div>
                         </div>
                   </div>
-                  <div className=" !w-[270px] relative group">
-                        <div className="w-full">
+                  <div className=" !w-[290px] relative ">
+                        <div className="w-full group">
                             <img src={ariImg} alt="" className="w-full cursor-pointer" />
                         </div>
                         <div className="flex justify-between mt-5">
@@ -118,7 +119,7 @@ const Arrivals = () => {
                           <p className="text-[#FFFFFF] text-[14px] font-dm font-bold py-[7px] px-[28px] bg-black">New</p>
                         </div>
                         <div className="absolute left-0 bottom-9">
-                          <div className="w-[270px] h-[0px] group-hover:h-[140px] bg-[#FFFFFF]">
+                          <div className="w-[270px] h-[0px] group-hover:h-[140px] duration-300 ease-in-out bg-[#FFFFFF]">
                             <div className="pt-[26px] opacity-0 group-hover:opacity-95">
                               <div className="flex items-center justify-end mr-3">
                                  <p className="text-[#262626] hover:text-[#767676] text-[15px] font-dm font-bold hover:font-normal pr-2 cursor-pointer">Add to Wish List</p>
@@ -135,8 +136,8 @@ const Arrivals = () => {
                           </div>
                         </div>
                   </div>
-                  <div className=" !w-[270px] relative group">
-                        <div className="w-full">
+                  <div className=" !w-[290px] relative ">
+                        <div className="w-full group">
                             <img src={ariImg} alt="" className="w-full cursor-pointer" />
                         </div>
                         <div className="flex justify-between mt-5">
@@ -147,7 +148,7 @@ const Arrivals = () => {
                           <p className="text-[#FFFFFF] text-[14px] font-dm font-bold py-[7px] px-[28px] bg-black">New</p>
                         </div>
                         <div className="absolute left-0 bottom-9">
-                          <div className="w-[270px] h-[0px] group-hover:h-[140px] bg-[#FFFFFF]">
+                          <div className="w-[270px] h-[0px] group-hover:h-[140px] duration-300 ease-in-out bg-[#FFFFFF]">
                             <div className="pt-[26px] opacity-0 group-hover:opacity-95">
                               <div className="flex items-center justify-end mr-3">
                                  <p className="text-[#262626] hover:text-[#767676] text-[15px] font-dm font-bold hover:font-normal pr-2 cursor-pointer">Add to Wish List</p>
@@ -164,8 +165,8 @@ const Arrivals = () => {
                           </div>
                         </div>
                   </div>
-                  <div className=" !w-[270px] relative group">
-                        <div className="w-full">
+                  <div className=" !w-[290px] relative ">
+                        <div className="w-full group">
                             <img src={ariImg} alt="" className="w-full cursor-pointer" />
                         </div>
                         <div className="flex justify-between mt-5">
@@ -176,7 +177,7 @@ const Arrivals = () => {
                           <p className="text-[#FFFFFF] text-[14px] font-dm font-bold py-[7px] px-[28px] bg-black">New</p>
                         </div>
                         <div className="absolute left-0 bottom-9">
-                          <div className="w-[270px] h-[0px] group-hover:h-[140px] bg-[#FFFFFF]">
+                          <div className="w-[270px] h-[0px] group-hover:h-[140px] duration-300 ease-in-out bg-[#FFFFFF]">
                             <div className="pt-[26px] opacity-0 group-hover:opacity-95">
                               <div className="flex items-center justify-end mr-3">
                                  <p className="text-[#262626] hover:text-[#767676] text-[15px] font-dm font-bold hover:font-normal pr-2 cursor-pointer">Add to Wish List</p>
