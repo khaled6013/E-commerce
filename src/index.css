@@ -24,7 +24,20 @@
 }
 .slick-slider .slick-next{
     position: absolute;
-    top: 0;
+    top: 50%;
     right: 0;
+    font-size: 15px;
+    background-color: #00000033;
+    color: #fff !important;
+    height: 55px;
+    width: 55px;
+    border-radius: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
     z-index: 999;
+
+}
+element.style {
+    width: 0% !important;
+    display: inline-block;
 }
