@@ -48,17 +48,17 @@ const Arrivals = () => {
        </div>
          <div className="w-full lg:mt-[40px]">
             <Slider {...settings} className="gap-3" >
-                 
+
                   <div className=" !w-[290px] relative ">
-                        <div className="w-full group">
-                            <img src={ariImg} alt="" className="w-full cursor-pointer" />
+                        <div className="w-full ">
+                            <img src={ariImg} alt="" className="w-full  group" />
                         </div>
                         <div className="flex justify-between mt-5">
                             <p className="text-[#262626] text-[16px] font-dm font-bold">Basic Crew  Neck Tee</p>
                             <p className="text-[#767676] text-[16px] font-normal font-dm">$44.00</p>
                         </div>
                         <div className="absolute top-2 left-2">
-                          <p className="text-[#FFFFFF] text-[14px] font-dm font-bold py-[7px] px-[28px] bg-black">New</p>
+                          <p className="text-[#FFFFFF] text-[14px] font-dm font-bold py-[7px] px-[28px] bg-black cursor-pointer">New</p>
                         </div>
                         <div className="absolute left-0 bottom-9">
                           <div className="w-[270px] h-[0px] group-hover:h-[140px] duration-300 ease-in-out bg-[#FFFFFF]">
@@ -79,15 +79,15 @@ const Arrivals = () => {
                         </div>
                   </div>
                   <div className=" !w-[290px] relative ">
-                        <div className="w-full group">
-                            <img src={ariImg} alt="" className="w-full cursor-pointer" />
+                        <div className="w-full ">
+                            <img src={ariImg} alt="" className="w-full  group" />
                         </div>
                         <div className="flex justify-between mt-5">
                             <p className="text-[#262626] text-[16px] font-dm font-bold">Basic Crew  Neck Tee</p>
                             <p className="text-[#767676] text-[16px] font-normal font-dm">$44.00</p>
                         </div>
                         <div className="absolute top-2 left-2">
-                          <p className="text-[#FFFFFF] text-[14px] font-dm font-bold py-[7px] px-[28px] bg-black">New</p>
+                          <p className="text-[#FFFFFF] text-[14px] font-dm font-bold py-[7px] px-[28px] bg-black cursor-pointer">New</p>
                         </div>
                         <div className="absolute left-0 bottom-9">
                           <div className="w-[270px] h-[0px] group-hover:h-[140px] duration-300 ease-in-out bg-[#FFFFFF]">
@@ -108,15 +108,15 @@ const Arrivals = () => {
                         </div>
                   </div>
                   <div className=" !w-[290px] relative ">
-                        <div className="w-full group">
-                            <img src={ariImg} alt="" className="w-full cursor-pointer" />
+                        <div className="w-full ">
+                            <img src={ariImg} alt="" className="w-full  group" />
                         </div>
                         <div className="flex justify-between mt-5">
                             <p className="text-[#262626] text-[16px] font-dm font-bold">Basic Crew  Neck Tee</p>
                             <p className="text-[#767676] text-[16px] font-normal font-dm">$44.00</p>
                         </div>
                         <div className="absolute top-2 left-2">
-                          <p className="text-[#FFFFFF] text-[14px] font-dm font-bold py-[7px] px-[28px] bg-black">New</p>
+                          <p className="text-[#FFFFFF] text-[14px] font-dm font-bold py-[7px] px-[28px] bg-black cursor-pointer">New</p>
                         </div>
                         <div className="absolute left-0 bottom-9">
                           <div className="w-[270px] h-[0px] group-hover:h-[140px] duration-300 ease-in-out bg-[#FFFFFF]">
@@ -137,15 +137,15 @@ const Arrivals = () => {
                         </div>
                   </div>
                   <div className=" !w-[290px] relative ">
-                        <div className="w-full group">
-                            <img src={ariImg} alt="" className="w-full cursor-pointer" />
+                        <div className="w-full ">
+                            <img src={ariImg} alt="" className="w-full  group" />
                         </div>
                         <div className="flex justify-between mt-5">
                             <p className="text-[#262626] text-[16px] font-dm font-bold">Basic Crew  Neck Tee</p>
                             <p className="text-[#767676] text-[16px] font-normal font-dm">$44.00</p>
                         </div>
                         <div className="absolute top-2 left-2">
-                          <p className="text-[#FFFFFF] text-[14px] font-dm font-bold py-[7px] px-[28px] bg-black">New</p>
+                          <p className="text-[#FFFFFF] text-[14px] font-dm font-bold py-[7px] px-[28px] bg-black cursor-pointer">New</p>
                         </div>
                         <div className="absolute left-0 bottom-9">
                           <div className="w-[270px] h-[0px] group-hover:h-[140px] duration-300 ease-in-out bg-[#FFFFFF]">
@@ -166,15 +166,15 @@ const Arrivals = () => {
                         </div>
                   </div>
                   <div className=" !w-[290px] relative ">
-                        <div className="w-full group">
-                            <img src={ariImg} alt="" className="w-full cursor-pointer" />
+                        <div className="w-full ">
+                            <img src={ariImg} alt="" className="w-full  group" />
                         </div>
                         <div className="flex justify-between mt-5">
                             <p className="text-[#262626] text-[16px] font-dm font-bold">Basic Crew  Neck Tee</p>
                             <p className="text-[#767676] text-[16px] font-normal font-dm">$44.00</p>
                         </div>
                         <div className="absolute top-2 left-2">
-                          <p className="text-[#FFFFFF] text-[14px] font-dm font-bold py-[7px] px-[28px] bg-black">New</p>
+                          <p className="text-[#FFFFFF] text-[14px] font-dm font-bold py-[7px] px-[28px] bg-black cursor-pointer">New</p>
                         </div>
                         <div className="absolute left-0 bottom-9">
                           <div className="w-[270px] h-[0px] group-hover:h-[140px] duration-300 ease-in-out bg-[#FFFFFF]">
@@ -194,7 +194,7 @@ const Arrivals = () => {
                           </div>
                         </div>
                   </div>
-                 
+
             </Slider>
          </div>
        </div>
