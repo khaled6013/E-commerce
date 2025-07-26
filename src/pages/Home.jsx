@@ -4,6 +4,7 @@ import Banner from "../components/Banner"
 import Information from "../components/Information"
 import Navbar from "../components/Navbar"
 import NavbarB from "../components/NavbarB"
+import Special from "../components/Special"
 
 const Home = () => {
   return (
@@ -14,6 +15,7 @@ const Home = () => {
       <Information></Information>
       <Add></Add>
       <Arrivals></Arrivals>
+      <Special></Special>
     </>
   )
 }

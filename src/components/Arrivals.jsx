@@ -63,6 +63,9 @@ const Arrivals = () => {
                             <p className="text-[#262626] text-[16px] font-dm font-bold">Basic Crew  Neck Tee</p>
                             <p className="text-[#767676] text-[16px] font-normal font-dm">$44.00</p>
                         </div>
+                        <div className="">
+                            <p className="text-[#767676] text-[16px] font-dm font-normal pt-3">Black</p>
+                        </div>
                         <div className="absolute top-2 left-2">
                           <p className="text-[#FFFFFF]  text-[14px] font-dm font-bold py-[7px] px-[28px] bg-black hover:bg-[#2e2b2b] cursor-pointer">New</p>
                         </div>
@@ -91,6 +94,9 @@ const Arrivals = () => {
                         <div className="flex justify-between mt-5 z-10">
                             <p className="text-[#262626] text-[16px] font-dm font-bold">Basic Crew  Neck Tee</p>
                             <p className="text-[#767676] text-[16px] font-normal font-dm">$44.00</p>
+                        </div>
+                        <div className="">
+                            <p className="text-[#767676] text-[16px] font-dm font-normal pt-3">Black</p>
                         </div>
                         <div className="absolute top-2 left-2">
                           <p className="text-[#FFFFFF]  text-[14px] font-dm font-bold py-[7px] px-[28px] bg-black hover:bg-[#2e2b2b] cursor-pointer">New</p>
@@ -121,6 +127,9 @@ const Arrivals = () => {
                             <p className="text-[#262626] text-[16px] font-dm font-bold">Basic Crew  Neck Tee</p>
                             <p className="text-[#767676] text-[16px] font-normal font-dm">$44.00</p>
                         </div>
+                        <div className="">
+                            <p className="text-[#767676] text-[16px] font-dm font-normal pt-3">Black</p>
+                        </div>
                         <div className="absolute top-2 left-2">
                           <p className="text-[#FFFFFF]  text-[14px] font-dm font-bold py-[7px] px-[28px] bg-black hover:bg-[#2e2b2b] cursor-pointer">New</p>
                         </div>
@@ -150,6 +159,9 @@ const Arrivals = () => {
                             <p className="text-[#262626] text-[16px] font-dm font-bold">Basic Crew  Neck Tee</p>
                             <p className="text-[#767676] text-[16px] font-normal font-dm">$44.00</p>
                         </div>
+                        <div className="">
+                            <p className="text-[#767676] text-[16px] font-dm font-normal pt-3">Black</p>
+                        </div>
                         <div className="absolute top-2 left-2">
                           <p className="text-[#FFFFFF]  text-[14px] font-dm font-bold py-[7px] px-[28px] bg-black hover:bg-[#2e2b2b] cursor-pointer">New</p>
                         </div>
@@ -178,6 +190,9 @@ const Arrivals = () => {
                         <div className="flex justify-between mt-5 z-10">
                             <p className="text-[#262626] text-[16px] font-dm font-bold">Basic Crew  Neck Tee</p>
                             <p className="text-[#767676] text-[16px] font-normal font-dm">$44.00</p>
+                        </div>
+                        <div className="">
+                            <p className="text-[#767676] text-[16px] font-dm font-normal pt-3">Black</p>
                         </div>
                         <div className="absolute top-2 left-2">
                           <p className="text-[#FFFFFF]  text-[14px] font-dm font-bold py-[7px] px-[28px] bg-black hover:bg-[#2e2b2b] cursor-pointer">New</p>
@@ -217,6 +232,9 @@ const Arrivals = () => {
                             <p className="text-[#262626] text-[16px] font-dm font-bold">Basic Crew  Neck Tee</p>
                             <p className="text-[#767676] text-[16px] font-normal font-dm">$44.00</p>
                         </div>
+                        <div className="">
+                            <p className="text-[#767676] text-[16px] font-dm font-normal pt-3">Black</p>
+                        </div>
                         <div className="absolute top-2 left-2">
                           <p className="text-[#FFFFFF]  text-[14px] font-dm font-bold py-[7px] px-[28px] bg-black hover:bg-[#2e2b2b] cursor-pointer">New</p>
                         </div>
@@ -245,6 +263,9 @@ const Arrivals = () => {
                         <div className="flex justify-between mt-5 z-10">
                             <p className="text-[#262626] text-[16px] font-dm font-bold">Basic Crew  Neck Tee</p>
                             <p className="text-[#767676] text-[16px] font-normal font-dm">$44.00</p>
+                        </div>
+                        <div className="">
+                            <p className="text-[#767676] text-[16px] font-dm font-normal pt-3">Black</p>
                         </div>
                         <div className="absolute top-2 left-2">
                           <p className="text-[#FFFFFF]  text-[14px] font-dm font-bold py-[7px] px-[28px] bg-black hover:bg-[#2e2b2b] cursor-pointer">New</p>
@@ -275,6 +296,9 @@ const Arrivals = () => {
                             <p className="text-[#262626] text-[16px] font-dm font-bold">Basic Crew  Neck Tee</p>
                             <p className="text-[#767676] text-[16px] font-normal font-dm">$44.00</p>
                         </div>
+                        <div className="">
+                            <p className="text-[#767676] text-[16px] font-dm font-normal pt-3">Black</p>
+                        </div>
                         <div className="absolute top-2 left-2">
                           <p className="text-[#FFFFFF]  text-[14px] font-dm font-bold py-[7px] px-[28px] bg-black hover:bg-[#2e2b2b] cursor-pointer">New</p>
                         </div>
@@ -304,6 +328,9 @@ const Arrivals = () => {
                             <p className="text-[#262626] text-[16px] font-dm font-bold">Basic Crew  Neck Tee</p>
                             <p className="text-[#767676] text-[16px] font-normal font-dm">$44.00</p>
                         </div>
+                        <div className="">
+                            <p className="text-[#767676] text-[16px] font-dm font-normal pt-3">Black</p>
+                        </div>
                         <div className="absolute top-2 left-2">
                           <p className="text-[#FFFFFF]  text-[14px] font-dm font-bold py-[7px] px-[28px] bg-black hover:bg-[#2e2b2b] cursor-pointer">New</p>
                         </div>
@@ -332,6 +359,9 @@ const Arrivals = () => {
                         <div className="flex justify-between mt-5 z-10">
                             <p className="text-[#262626] text-[16px] font-dm font-bold">Basic Crew  Neck Tee</p>
                             <p className="text-[#767676] text-[16px] font-normal font-dm">$44.00</p>
+                        </div>
+                         <div className="">
+                            <p className="text-[#767676] text-[16px] font-dm font-normal pt-3">Black</p>
                         </div>
                         <div className="absolute top-2 left-2">
                           <p className="text-[#FFFFFF]  text-[14px] font-dm font-bold py-[7px] px-[28px] bg-black hover:bg-[#2e2b2b] cursor-pointer">New</p>
