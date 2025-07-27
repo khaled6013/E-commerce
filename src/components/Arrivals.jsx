@@ -69,7 +69,7 @@ const Arrivals = () => {
                         <div className="absolute top-2 left-2">
                           <p className="text-[#FFFFFF]  text-[14px] font-dm font-bold py-[7px] px-[28px] bg-black hover:bg-[#2e2b2b] cursor-pointer">New</p>
                         </div>
-                        <div className="absolute left-0 bottom-[42px]">
+                        <div className="absolute left-0 bottom-[62px]">
                           <div className="w-[290px] h-[0px] group-hover:h-[130px] duration-300 ease-in-out bg-[#FFFFFF]">
                             <div className="pt-[26px] opacity-0 group-hover:opacity-95">
                               <div className="flex items-center justify-end mr-3">
@@ -101,7 +101,7 @@ const Arrivals = () => {
                         <div className="absolute top-2 left-2">
                           <p className="text-[#FFFFFF]  text-[14px] font-dm font-bold py-[7px] px-[28px] bg-black hover:bg-[#2e2b2b] cursor-pointer">New</p>
                         </div>
-                        <div className="absolute left-0 bottom-[42px]">
+                        <div className="absolute left-0 bottom-[62px]">
                           <div className="w-[290px] h-[0px] group-hover:h-[130px] duration-300 ease-in-out bg-[#FFFFFF]">
                             <div className="pt-[26px] opacity-0 group-hover:opacity-95">
                               <div className="flex items-center justify-end mr-3">
@@ -133,7 +133,7 @@ const Arrivals = () => {
                         <div className="absolute top-2 left-2">
                           <p className="text-[#FFFFFF]  text-[14px] font-dm font-bold py-[7px] px-[28px] bg-black hover:bg-[#2e2b2b] cursor-pointer">New</p>
                         </div>
-                        <div className="absolute left-0 bottom-[42px]">
+                        <div className="absolute left-0 bottom-[62px]">
                           <div className="w-[290px] h-[0px] group-hover:h-[130px] duration-300 ease-in-out bg-[#FFFFFF]">
                             <div className="pt-[26px] opacity-0 group-hover:opacity-95">
                               <div className="flex items-center justify-end mr-3">
@@ -165,7 +165,7 @@ const Arrivals = () => {
                         <div className="absolute top-2 left-2">
                           <p className="text-[#FFFFFF]  text-[14px] font-dm font-bold py-[7px] px-[28px] bg-black hover:bg-[#2e2b2b] cursor-pointer">New</p>
                         </div>
-                        <div className="absolute left-0 bottom-[42px]">
+                        <div className="absolute left-0 bottom-[62px]">
                           <div className="w-[290px] h-[0px] group-hover:h-[130px] duration-300 ease-in-out bg-[#FFFFFF]">
                             <div className="pt-[26px] opacity-0 group-hover:opacity-95">
                               <div className="flex items-center justify-end mr-3">
@@ -197,7 +197,7 @@ const Arrivals = () => {
                         <div className="absolute top-2 left-2">
                           <p className="text-[#FFFFFF]  text-[14px] font-dm font-bold py-[7px] px-[28px] bg-black hover:bg-[#2e2b2b] cursor-pointer">New</p>
                         </div>
-                        <div className="absolute left-0 bottom-[42px]">
+                        <div className="absolute left-0 bottom-[62px]">
                           <div className="w-[290px] h-[0px] group-hover:h-[130px] duration-300 ease-in-out bg-[#FFFFFF]">
                             <div className="pt-[26px] opacity-0 group-hover:opacity-95">
                               <div className="flex items-center justify-end mr-3">
@@ -238,7 +238,7 @@ const Arrivals = () => {
                         <div className="absolute top-2 left-2">
                           <p className="text-[#FFFFFF]  text-[14px] font-dm font-bold py-[7px] px-[28px] bg-black hover:bg-[#2e2b2b] cursor-pointer">New</p>
                         </div>
-                        <div className="absolute left-0 bottom-[42px]">
+                        <div className="absolute left-0 bottom-[62px]">
                           <div className="w-[290px] h-[0px] group-hover:h-[130px] duration-300 ease-in-out bg-[#FFFFFF]">
                             <div className="pt-[26px] opacity-0 group-hover:opacity-95">
                               <div className="flex items-center justify-end mr-3">
@@ -270,7 +270,7 @@ const Arrivals = () => {
                         <div className="absolute top-2 left-2">
                           <p className="text-[#FFFFFF]  text-[14px] font-dm font-bold py-[7px] px-[28px] bg-black hover:bg-[#2e2b2b] cursor-pointer">New</p>
                         </div>
-                        <div className="absolute left-0 bottom-[42px]">
+                        <div className="absolute left-0 bottom-[62px]">
                           <div className="w-[290px] h-[0px] group-hover:h-[130px] duration-300 ease-in-out bg-[#FFFFFF]">
                             <div className="pt-[26px] opacity-0 group-hover:opacity-95">
                               <div className="flex items-center justify-end mr-3">
@@ -302,7 +302,7 @@ const Arrivals = () => {
                         <div className="absolute top-2 left-2">
                           <p className="text-[#FFFFFF]  text-[14px] font-dm font-bold py-[7px] px-[28px] bg-black hover:bg-[#2e2b2b] cursor-pointer">New</p>
                         </div>
-                        <div className="absolute left-0 bottom-[42px]">
+                        <div className="absolute left-0 bottom-[62px]">
                           <div className="w-[290px] h-[0px] group-hover:h-[130px] duration-300 ease-in-out bg-[#FFFFFF]">
                             <div className="pt-[26px] opacity-0 group-hover:opacity-95">
                               <div className="flex items-center justify-end mr-3">
@@ -334,7 +334,7 @@ const Arrivals = () => {
                         <div className="absolute top-2 left-2">
                           <p className="text-[#FFFFFF]  text-[14px] font-dm font-bold py-[7px] px-[28px] bg-black hover:bg-[#2e2b2b] cursor-pointer">New</p>
                         </div>
-                        <div className="absolute left-0 bottom-[42px]">
+                        <div className="absolute left-0 bottom-[62px]">
                           <div className="w-[290px] h-[0px] group-hover:h-[130px] duration-300 ease-in-out bg-[#FFFFFF]">
                             <div className="pt-[26px] opacity-0 group-hover:opacity-95">
                               <div className="flex items-center justify-end mr-3">
@@ -366,7 +366,7 @@ const Arrivals = () => {
                         <div className="absolute top-2 left-2">
                           <p className="text-[#FFFFFF]  text-[14px] font-dm font-bold py-[7px] px-[28px] bg-black hover:bg-[#2e2b2b] cursor-pointer">New</p>
                         </div>
-                        <div className="absolute left-0 bottom-[42px]">
+                        <div className="absolute left-0 bottom-[62px]">
                           <div className="w-[290px] h-[0px] group-hover:h-[130px] duration-300 ease-in-out bg-[#FFFFFF]">
                             <div className="pt-[26px] opacity-0 group-hover:opacity-95">
                               <div className="flex items-center justify-end mr-3">
