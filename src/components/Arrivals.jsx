@@ -75,7 +75,7 @@ const Arrivals = () => {
      <div className="py-10">
        <div className="lg:w-10/12 mx-auto w-11/12">
        <div className="w-full">
-        <p className="text-[#262626] text-[39px] font-semibold font-dm">New Arrivals</p>
+        <p className="text-[#262626] text-[39px] font-semibold font-dm">New Arrivals 01</p>
        </div>
          <div className="w-full lg:mt-[40px]">
             <Slider {...settings} className="gap-3" >
