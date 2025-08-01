@@ -1,8 +1,11 @@
+import Products from "../components/Products"
 
 
 const Shop = () => {
   return (
-    <div>Shop</div>
+    <>
+     <Products></Products>
+    </>
   )
 }
 
