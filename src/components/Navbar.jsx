@@ -2,6 +2,7 @@ import { FaBars } from "react-icons/fa";
 import { RxCross2 } from "react-icons/rx";
 import logo from '../assets/logo.png'
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
     let [manu,setManu] = useState(false)
@@ -16,10 +17,10 @@ const Navbar = () => {
                         <div className="lg:w-4/6">
                             <ul className={`lg:flex lg:gap-x-10 duration-200 ease-in-out ${manu == true ? "block" : "hidden"}`}>
                                 <li className='lg:pt-0 pt-1'>
-                                    <a href="#" className='text-[#767676] text-[14px] font-dm font-normal hover:font-bold'>Home</a>
+                                    <Link to='/' className='text-[#767676] text-[14px] font-dm font-normal hover:font-bold'>Home</Link>
                                 </li>
                                 <li className='lg:pt-0 pt-1'>
-                                    <a href="#" className='text-[#767676] text-[14px] font-dm font-normal hover:font-bold'>Shop</a>
+                                    <Link to='/shop' className="text-[#767676] text-[14px] font-dm font-normal hover:font-bold">Shop</Link>
                                 </li>
                                 <li className='lg:pt-0 pt-1'>
                                     <a href="#" className='text-[#767676] text-[14px] font-dm font-normal hover:font-bold'>About</a>

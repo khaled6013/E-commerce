@@ -10,14 +10,11 @@ import Special from "../components/Special"
 const Home = () => {
   return (
     <>
-      <Navbar></Navbar>
-      <NavbarB></NavbarB>
       <Banner></Banner>
       <Information></Information>
       <Add></Add>
       <Arrivals></Arrivals>
       <Special></Special>
-      <Footer></Footer>
     </>
   )
 }
