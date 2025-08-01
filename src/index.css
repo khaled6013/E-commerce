@@ -37,7 +37,3 @@
     z-index: 999;
 
 }
-element.style {
-    width: 0% !important;
-    display: inline-block;
-}
