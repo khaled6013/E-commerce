@@ -17,6 +17,32 @@ const Special = () => {
         slidesToScroll: 1,
         nextArrow: <FaLongArrowAltRight />,
         prevArrow: <FaLongArrowAltLeft />,
+        responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          infinite: true,
+          dots: true
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          initialSlide: 2
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+    ],
         appendDots: dots => (
           <div
             style={{
@@ -65,8 +91,8 @@ const Special = () => {
                         <div className="absolute top-2 left-2">
                           <p className="text-[#FFFFFF]  text-[14px] font-dm font-bold py-[7px] px-[28px] bg-black hover:bg-[#2e2b2b] cursor-pointer">New</p>
                         </div>
-                        <div className="absolute left-0 bottom-[62px]">
-                          <div className="w-[100%] h-[0px] group-hover:h-[130px] duration-300 ease-in-out bg-[#FFFFFF]">
+                        <div className="absolute w-[100%] left-0 bottom-[62px]">
+                          <div className=" h-[0px] group-hover:h-[130px] duration-300 ease-in-out bg-[#FFFFFF]">
                             <div className="pt-[26px] opacity-0 group-hover:opacity-95">
                               <div className="flex items-center justify-end mr-3">
                                  <p className="text-[#262626] hover:text-[#767676] text-[15px] font-dm font-bold hover:font-normal pr-2 cursor-pointer">Add to Wish List</p>
@@ -97,8 +123,8 @@ const Special = () => {
                         <div className="absolute top-2 left-2">
                           <p className="text-[#FFFFFF]  text-[14px] font-dm font-bold py-[7px] px-[28px] bg-black hover:bg-[#2e2b2b] cursor-pointer">New</p>
                         </div>
-                        <div className="absolute left-0 bottom-[62px]">
-                          <div className="w-[100%] h-[0px] group-hover:h-[130px] duration-300 ease-in-out bg-[#FFFFFF]">
+                        <div className="absolute w-[100%] left-0 bottom-[62px]">
+                          <div className=" h-[0px] group-hover:h-[130px] duration-300 ease-in-out bg-[#FFFFFF]">
                             <div className="pt-[26px] opacity-0 group-hover:opacity-95">
                               <div className="flex items-center justify-end mr-3">
                                  <p className="text-[#262626] hover:text-[#767676] text-[15px] font-dm font-bold hover:font-normal pr-2 cursor-pointer">Add to Wish List</p>
@@ -129,8 +155,8 @@ const Special = () => {
                         <div className="absolute top-2 left-2">
                           <p className="text-[#FFFFFF]  text-[14px] font-dm font-bold py-[7px] px-[28px] bg-black hover:bg-[#2e2b2b] cursor-pointer">New</p>
                         </div>
-                        <div className="absolute left-0 bottom-[62px]">
-                          <div className="w-[100%] h-[0px] group-hover:h-[130px] duration-300 ease-in-out bg-[#FFFFFF]">
+                        <div className="absolute w-[100%] left-0 bottom-[62px]">
+                          <div className=" h-[0px] group-hover:h-[130px] duration-300 ease-in-out bg-[#FFFFFF]">
                             <div className="pt-[26px] opacity-0 group-hover:opacity-95">
                               <div className="flex items-center justify-end mr-3">
                                  <p className="text-[#262626] hover:text-[#767676] text-[15px] font-dm font-bold hover:font-normal pr-2 cursor-pointer">Add to Wish List</p>
@@ -161,8 +187,8 @@ const Special = () => {
                         <div className="absolute top-2 left-2">
                           <p className="text-[#FFFFFF]  text-[14px] font-dm font-bold py-[7px] px-[28px] bg-black hover:bg-[#2e2b2b] cursor-pointer">New</p>
                         </div>
-                        <div className="absolute left-0 bottom-[62px]">
-                          <div className="w-[100%] h-[0px] group-hover:h-[130px] duration-300 ease-in-out bg-[#FFFFFF]">
+                        <div className="absolute w-[100%] left-0 bottom-[62px]">
+                          <div className=" h-[0px] group-hover:h-[130px] duration-300 ease-in-out bg-[#FFFFFF]">
                             <div className="pt-[26px] opacity-0 group-hover:opacity-95">
                               <div className="flex items-center justify-end mr-3">
                                  <p className="text-[#262626] hover:text-[#767676] text-[15px] font-dm font-bold hover:font-normal pr-2 cursor-pointer">Add to Wish List</p>
@@ -193,8 +219,8 @@ const Special = () => {
                         <div className="absolute top-2 left-2">
                           <p className="text-[#FFFFFF]  text-[14px] font-dm font-bold py-[7px] px-[28px] bg-black hover:bg-[#2e2b2b] cursor-pointer">New</p>
                         </div>
-                        <div className="absolute left-0 bottom-[62px]">
-                          <div className="w-[100%] h-[0px] group-hover:h-[130px] duration-300 ease-in-out bg-[#FFFFFF]">
+                        <div className="absolute w-[100%] left-0 bottom-[62px]">
+                          <div className=" h-[0px] group-hover:h-[130px] duration-300 ease-in-out bg-[#FFFFFF]">
                             <div className="pt-[26px] opacity-0 group-hover:opacity-95">
                               <div className="flex items-center justify-end mr-3">
                                  <p className="text-[#262626] hover:text-[#767676] text-[15px] font-dm font-bold hover:font-normal pr-2 cursor-pointer">Add to Wish List</p>
