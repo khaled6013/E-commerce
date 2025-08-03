@@ -10,6 +10,8 @@ import ari6Img from '../assets/ari6.png'
 import ari7Img from '../assets/ari7.png'
 import ari8Img from '../assets/ari8.png'
 import addd2 from'../assets/addd2.png'
+import { useContext } from "react";
+import { Apidata } from "./ContextApi";
 
 const Arrivals = () => {
    const settings = {
@@ -70,6 +72,9 @@ const Arrivals = () => {
       </div>
     )
   };
+  let data = useContext(Apidata);
+  console.log(data);
+  
   return (
     <>
      <div className="py-10">
