@@ -1,15 +1,26 @@
-import { useState } from "react"
+import { useContext, useState } from "react"
 import { AiOutlineBars } from "react-icons/ai"
 import { FaCaretDown, FaCaretUp } from "react-icons/fa"
 import { FiPlus } from "react-icons/fi"
 import { IoAppsSharp } from "react-icons/io5"
-
-
-
+import Post from "./Post"
+import Pagination from "./Pagination"
+import { Apidata } from "./ContextApi"
 
 const Products = () => {
+  let  info = useContext(Apidata)
   let [ show , SetShow] = useState(false)
   let [ showOne , setShowTwo] = useState(false)
+  let [ perPage , setPerpage ] = useState(10)
+  let [ currentPage , setCurrenPage] = useState(1)
+  let lastPage = perPage * currentPage
+  let firstPage = lastPage - perPage
+  let allPage = info.slice(firstPage , lastPage)
+  let pageNumber = []
+  for( let i = 1; i <= Math.ceil( info.length / perPage); i++){
+   pageNumber.push(i)
+  }
+ 
   return (
     <>
       <div className="lg:py-[100px]">
@@ -122,6 +133,7 @@ const Products = () => {
                 </div>
               </div>
             </div>
+            {/* right part start */}
             <div className="w-9/12 lg:ml-10">
               <div className="flex items-center justify-between">
                 <div className="flex">
@@ -138,6 +150,12 @@ const Products = () => {
                      <input type="number" className="border-[1px] border-[#F0F0F0] outline-0 px-1 w-[120px]"></input>
                   </div>
                 </div>
+              </div>
+              <div className="flex flex-wrap justify-between mt-6 gap-y-10">
+               <Post allPage={allPage}></Post>
+              </div>
+              <div className="lg:mt-10">
+               <Pagination pageNumber={pageNumber}></Pagination>
               </div>
             </div>
           </div>
