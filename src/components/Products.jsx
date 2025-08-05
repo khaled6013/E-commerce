@@ -1,6 +1,10 @@
 import { useState } from "react"
+import { AiOutlineBars } from "react-icons/ai"
 import { FaCaretDown, FaCaretUp } from "react-icons/fa"
 import { FiPlus } from "react-icons/fi"
+import { IoAppsSharp } from "react-icons/io5"
+
+
 
 
 const Products = () => {
@@ -118,7 +122,24 @@ const Products = () => {
                 </div>
               </div>
             </div>
-            <div className="w-9/12">2</div>
+            <div className="w-9/12 lg:ml-10">
+              <div className="flex items-center justify-between">
+                <div className="flex">
+                  <IoAppsSharp className="border-[1px] border-[#737373] !w-[30px] !h-[30px] text-[25px] hover:bg-[#262626] hover:text-[#ffff]"/>
+                  <AiOutlineBars className="border-[1px] border-[#737373] !w-[30px] !h-[30px] text-[25px] hover:bg-[#262626] hover:text-[#ffff] ml-4"/>
+                </div>
+                <div className="flex items-center">
+                  <div className="flex items-center">
+                     <label for="fname" className="text-[#767676] text-[16px] font-dm font-normal">Sort by:</label>
+                     <input type="text" className="border-[1px] border-[#F0F0F0] outline-0 px-1"></input>
+                  </div>
+                  <div className="ml-8">
+                       <label for="fname" className="text-[#767676] text-[16px] font-dm font-normal">Show:</label>
+                     <input type="number" className="border-[1px] border-[#F0F0F0] outline-0 px-1 w-[120px]"></input>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
