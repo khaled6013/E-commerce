@@ -33,6 +33,9 @@ const Products = () => {
       setCurrenPage((state)=> state -1)
     }
   }
+  let handlePageNum = (e)=>{
+      setPerpage(e.target.value);
+  }
  
   return (
     <>
@@ -158,9 +161,13 @@ const Products = () => {
                      <label for="fname" className="text-[#767676] text-[16px] font-dm font-normal">Sort by:</label>
                      <input type="text" className="border-[1px] border-[#F0F0F0] outline-0 px-1"></input>
                   </div>
-                  <div className="ml-8">
-                       <label for="fname" className="text-[#767676] text-[16px] font-dm font-normal">Show:</label>
-                     <input type="number" className="border-[1px] border-[#F0F0F0] outline-0 px-1 w-[120px]"></input>
+                  <div className="ml-8 flex items-center gap-x-2">
+                       <p  className="text-[#767676] text-[16px] font-dm font-normal">Show:</p>
+                       <select name="" id="" className="border-[1px] border-[#F0F0F0] outline-0 px-1 w-[120px]" onClick={handlePageNum}>
+                        <option value="10">10</option>
+                        <option value="20">20</option>
+                        <option value="30">30</option>
+                       </select>
                   </div>
                 </div>
               </div>
