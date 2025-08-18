@@ -20,6 +20,19 @@ const Products = () => {
   for( let i = 1; i <= Math.ceil( info.length / perPage); i++){
    pageNumber.push(i)
   }
+  let paginate = (index)=>{
+    setCurrenPage(index + 1)
+  }
+  let next = ()=>{
+    if( currentPage < pageNumber.length){
+      setCurrenPage((state)=> state +1)
+    }
+  }
+  let prev = ()=>{ 
+    if( currentPage > 1){
+      setCurrenPage((state)=> state -1)
+    }
+  }
  
   return (
     <>
@@ -155,7 +168,7 @@ const Products = () => {
                <Post allPage={allPage}></Post>
               </div>
               <div className="lg:mt-10">
-               <Pagination pageNumber={pageNumber}></Pagination>
+               <Pagination pageNumber={pageNumber} paginate={paginate} next={next} prev={prev} currentPage ={currentPage}></Pagination>
               </div>
             </div>
           </div>
