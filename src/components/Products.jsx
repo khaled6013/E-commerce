@@ -1,4 +1,4 @@
-import { useContext, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import { AiOutlineBars } from "react-icons/ai"
 import { FaCaretDown, FaCaretUp } from "react-icons/fa"
 import { FiPlus } from "react-icons/fi"
@@ -13,6 +13,9 @@ const Products = () => {
   let [ showOne , setShowTwo] = useState(false)
   let [ perPage , setPerpage ] = useState(10)
   let [ currentPage , setCurrenPage] = useState(1)
+  let [ Category , setCategory] = useState([])
+  let [ filterCate , setFilterCate] = useState([])
+  let [ brand , setBrand] = useState([])
   let lastPage = perPage * currentPage
   let firstPage = lastPage - perPage
   let allPage = info.slice(firstPage , lastPage)
@@ -36,6 +39,17 @@ const Products = () => {
   let handlePageNum = (e)=>{
       setPerpage(e.target.value);
   }
+  useEffect(()=>{
+    setCategory([...new Set(info.map((item)=>item.category))]);
+    setBrand([...new Set(info.map((item)=>item.brand))]);
+  },[info])
+
+  let handleCategory = (cItem)=>{
+    let filterItem = info.filter((item)=>item.category == cItem)
+    setFilterCate(filterItem);
+  }
+  
+  
  
   return (
     <>
@@ -52,26 +66,14 @@ const Products = () => {
               <div className="">
                 <p className="text-[#262626] text-[20px] font-dm font-bold">Shop by Category</p>
                 <div className="mt-8">
-                 <div className="flex justify-between items-center border-b-[1px] border-[#F0F0F0] pb-3 cursor-pointer">
-                    <p className="text-[#767676] text-[16px] font-dm font-normal">Category 1</p>
-                    <FiPlus />
-                 </div>
-                 <div className="flex justify-between items-center border-b-[1px] border-[#F0F0F0] pb-3 pt-3 cursor-pointer">
-                    <p className="text-[#767676] text-[16px] font-dm font-normal">Category 2</p>
-                    <FiPlus />
-                 </div>
-                 <div className="flex justify-between items-center border-b-[1px] border-[#F0F0F0] pb-3 pt-3 cursor-pointer">
-                    <p className="text-[#767676] text-[16px] font-dm font-normal">Category 3</p>
-                    <FiPlus />
-                 </div>
-                 <div className="flex justify-between items-center border-b-[1px] border-[#F0F0F0] pb-3 pt-3 cursor-pointer">
-                    <p className="text-[#767676] text-[16px] font-dm font-normal">Category 4</p>
-                    <FiPlus />
-                 </div>
-                 <div className="flex justify-between items-center border-b-[1px] border-[#F0F0F0] pb-3 pt-3 cursor-pointer">
-                    <p className="text-[#767676] text-[16px] font-dm font-normal">Category 5</p>
-                    <FiPlus />
-                 </div>
+                  <>
+                    {Category.map((item)=>(
+                      <div onClick={()=>handleCategory(item)} className="flex justify-between items-center border-b-[1px] border-[#F0F0F0] pb-2 cursor-pointer">
+                          <p  className="text-[#767676] text-[16px] font-dm font-normal pt-2">{item}</p>
+                          <FiPlus />
+                      </div>
+                    ))}
+                  </>
                 </div>
                 <div className="mt-10 ">
                     <div className="flex justify-between items-center cursor-pointer" onClick={()=>SetShow(!show)}>
@@ -108,21 +110,11 @@ const Products = () => {
                    
                     </div>
                     <div className={`mt-8 ${ showOne ? "block":"hidden"}`}>
-                        <div className="border-b-[1px] border-[#F0F0F0] pb-3">
-                           <p className="text-[#767676] text-[16px] font-dm font-normal">Brand 1</p>
+                      {brand.map((item)=>(
+                        <div className="border-b-[1px] border-[#F0F0F0] pb-2">
+                           <p className="text-[#767676] text-[16px] font-dm font-normal pt-2 cursor-pointer">{item}</p>
                         </div>
-                         <div className="border-b-[1px] border-[#F0F0F0] pb-3 pt-3">
-                           <p className="text-[#767676] text-[16px] font-dm font-normal">Brand 2</p>
-                        </div>
-                         <div className="border-b-[1px] border-[#F0F0F0] pb-3 pt-3">
-                           <p className="text-[#767676] text-[16px] font-dm font-normal">Brand 3</p>
-                        </div>
-                         <div className="border-b-[1px] border-[#F0F0F0] pb-3 pt-3">
-                           <p className="text-[#767676] text-[16px] font-dm font-normal">Brand 4</p>
-                        </div>
-                         <div className="border-b-[1px] border-[#F0F0F0] pb-3 pt-3">
-                           <p className="text-[#767676] text-[16px] font-dm font-normal">Brand 5</p>
-                        </div>
+                      ))}
                     </div>
                 </div>
                 <div className="mt-10 ">
@@ -172,7 +164,7 @@ const Products = () => {
                 </div>
               </div>
               <div className="flex flex-wrap justify-between mt-6 gap-y-10">
-               <Post allPage={allPage}></Post>
+               <Post allPage={allPage} filterCate={filterCate}></Post>
               </div>
               <div className="lg:mt-10">
                <Pagination pageNumber={pageNumber} paginate={paginate} next={next} prev={prev} currentPage ={currentPage}></Pagination>

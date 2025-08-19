@@ -1,10 +1,6 @@
 import { FaHeart, FaLongArrowAltLeft, FaLongArrowAltRight, FaShoppingCart } from "react-icons/fa";
 import Slider from "react-slick";
 import { FaCodeCompare } from "react-icons/fa6";
-import ari5Img from '../assets/ari5.png'
-import ari6Img from '../assets/ari6.png'
-import ari7Img from '../assets/ari7.png'
-import ari8Img from '../assets/ari8.png'
 import addd2 from'../assets/addd2.png'
 import { useContext } from "react";
 import { Apidata } from "./ContextApi";

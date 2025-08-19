@@ -1,7 +1,7 @@
 
 
 const Pagination = ({pageNumber , paginate,next,prev,currentPage}) => {
-console.log(currentPage);
+
 
     return (
         <>
