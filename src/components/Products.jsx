@@ -16,6 +16,7 @@ const Products = () => {
   let [ Category , setCategory] = useState([])
   let [ filterCate , setFilterCate] = useState([])
   let [ brand , setBrand] = useState([])
+  let [active,setActive] = useState(false)
   let lastPage = perPage * currentPage
   let firstPage = lastPage - perPage
   let allPage = info.slice(firstPage , lastPage)
@@ -51,8 +52,16 @@ const Products = () => {
   let handleAllPro = ()=>{
    setFilterCate("");
   }
-  
-  
+  let handleList = ()=>{
+    if(active){
+      setActive(false);
+    }
+    else{
+      setActive(true);
+    }
+    
+  }
+ 
  
   return (
     <>
@@ -152,8 +161,9 @@ const Products = () => {
             <div className="w-9/12 lg:ml-10">
               <div className="flex items-center justify-between">
                 <div className="flex">
-                  <IoAppsSharp className="border-[1px] border-[#737373] !w-[30px] !h-[30px] text-[25px] hover:bg-[#262626] hover:text-[#ffff]"/>
-                  <AiOutlineBars className="border-[1px] border-[#737373] !w-[30px] !h-[30px] text-[25px] hover:bg-[#262626] hover:text-[#ffff] ml-4"/>
+                  <IoAppsSharp onClick={handleList} className={`${active == true  ? "cursor-pointer border-[1px] border-[#737373] !w-[30px] !h-[30px] p-1 text-[25px] hover:bg-[#262626] hover:text-[#ffff] ml-4": "cursor-pointer bg-[#262626] text-[#ffff]  border-[1px] border-[#737373] !w-[30px] !h-[30px] p-1 text-[25px] hover:bg-[#262626] hover:text-[#ffff] ml-4" }`}/>
+
+                  <AiOutlineBars onClick={handleList} className={`${active == true  ? "cursor-pointer bg-[#262626] text-[#ffff]  border-[1px] border-[#737373] !w-[30px] !h-[30px] p-1 text-[25px] hover:bg-[#262626] hover:text-[#ffff] ml-4" :"cursor-pointer border-[1px] border-[#737373] !w-[30px] !h-[30px] p-1 text-[25px] hover:bg-[#262626] hover:text-[#ffff] ml-4"}`}/>
                 </div>
                 <div className="flex items-center">
                   <div className="flex items-center">
@@ -171,7 +181,7 @@ const Products = () => {
                 </div>
               </div>
               <div >
-               <Post allPage={allPage} filterCate={filterCate}></Post>
+               <Post allPage={allPage} filterCate={filterCate} active={active}></Post>
               </div>
               <div className="lg:mt-7">
                <Pagination pageNumber={pageNumber} paginate={paginate} next={next} prev={prev} currentPage ={currentPage}></Pagination>

@@ -3,8 +3,9 @@ import { FaHeart, FaShoppingCart } from "react-icons/fa"
 import { FaCodeCompare } from "react-icons/fa6"
 import { Link } from "react-router-dom";
 
-const Post = ({allPage , filterCate}) => {
-
+const Post = ({allPage , filterCate , active}) => {
+    
+    
     let [AllFilter , setAllFilter] = useState([])
     let [showAll,setShowAll] = useState(true)
 
@@ -28,7 +29,7 @@ const Post = ({allPage , filterCate}) => {
         {AllFilter.length > 0 ? (
          <div className="">
                <div className="">
-                <div className="flex flex-wrap justify-between mt-6 gap-y-10">
+                <div className={`${active == true  ? " mt-6": "flex flex-wrap justify-between mt-6 gap-y-10"}`}>
                 {AllFilter.map((item)=>(
             <div className=" !w-[31%] relative group">
                 <div className="w-full ">
@@ -72,7 +73,7 @@ const Post = ({allPage , filterCate}) => {
         )
           :   
         (
-            <div className="flex flex-wrap justify-between mt-6 gap-y-10">
+            <div className={`${active == true  ? " mt-6": "flex flex-wrap justify-between mt-6 gap-y-10"}`}>
                 {allPage.map((item)=>(
                <div className=" !w-[31%] relative group">
                    <div className="w-full ">
