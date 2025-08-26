@@ -48,6 +48,9 @@ const Products = () => {
     let filterItem = info.filter((item)=>item.category == cItem)
     setFilterCate(filterItem);
   }
+  let handleAllPro = ()=>{
+   setFilterCate("");
+  }
   
   
  
@@ -67,6 +70,10 @@ const Products = () => {
                 <p className="text-[#262626] text-[20px] font-dm font-bold">Shop by Category</p>
                 <div className="mt-8">
                   <>
+                  <div  onClick={handleAllPro} className="flex justify-between items-center border-b-[1px] border-[#F0F0F0] pb-2 cursor-pointer">
+                    <p  className="text-[#767676] text-[16px] font-dm font-normal pt-2">All Product</p>
+                    <FiPlus />
+                  </div>
                     {Category.map((item)=>(
                       <div onClick={()=>handleCategory(item)} className="flex justify-between items-center border-b-[1px] border-[#F0F0F0] pb-2 cursor-pointer">
                           <p  className="text-[#767676] text-[16px] font-dm font-normal pt-2">{item}</p>
@@ -163,10 +170,10 @@ const Products = () => {
                   </div>
                 </div>
               </div>
-              <div className="flex flex-wrap justify-between mt-6 gap-y-10">
+              <div >
                <Post allPage={allPage} filterCate={filterCate}></Post>
               </div>
-              <div className="lg:mt-10">
+              <div className="lg:mt-7">
                <Pagination pageNumber={pageNumber} paginate={paginate} next={next} prev={prev} currentPage ={currentPage}></Pagination>
               </div>
             </div>
