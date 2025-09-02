@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const Post = ({allPage , filterCate , active}) => {
     
-    
+
     let [AllFilter , setAllFilter] = useState([])
     let [showAll,setShowAll] = useState(true)
 
@@ -33,7 +33,9 @@ const Post = ({allPage , filterCate , active}) => {
                 {AllFilter.map((item)=>(
             <div className=" !w-[31%] relative group">
                 <div className="w-full ">
-                    <img src={item.thumbnail} alt="" className="w-full cursor-pointer" />
+                        <Link to={`/shop/${item.id}`}>
+                         <img src={item.thumbnail} alt="" className="w-full cursor-pointer " />
+                        </Link>
                 </div>
                 <div className="flex justify-between mt-5 z-10">
                     <p className="text-[#262626] text-[16px] font-dm font-bold">{item.title}</p>
