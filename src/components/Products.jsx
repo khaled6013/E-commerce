@@ -184,7 +184,7 @@ const Products = () => {
                <Post allPage={allPage} filterCate={filterCate} active={active}></Post>
               </div>
               <div className="lg:mt-7">
-               <Pagination pageNumber={pageNumber} paginate={paginate} next={next} prev={prev} currentPage ={currentPage}></Pagination>
+               <Pagination pageNumber={pageNumber} paginate={paginate} next={next} prev={prev} currentPage ={currentPage} filterCate={filterCate}></Pagination>
               </div>
             </div>
           </div>
