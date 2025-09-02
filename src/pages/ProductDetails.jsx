@@ -27,10 +27,14 @@ let [ show ,setShow] = useState(false)
 let [ showOne , setShowOne] = useState(false)
 
 let increment =()=>{
-  setCount(count+1);
+  if(count < 10 ){
+    setCount(count+1);
+  }
 }
 let decrement =()=>{
-  setCount(count-1);
+  if( count > 0){
+    setCount(count-1);
+  }
 }
 let clientRating = Array.from({length:5},(_,index)=>{
   let number = index + 0.5
