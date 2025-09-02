@@ -1,25 +1,27 @@
 import axios from "axios"
-import { useEffect, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
-import detailsPro from '../assets/ari1.png'
 import { MdOutlineStarHalf, MdOutlineStarOutline, MdOutlineStarPurple500 } from "react-icons/md"
 import { GoDotFill, GoPlus } from "react-icons/go"
 import { FaPlus } from "react-icons/fa"
 import { FiMinus } from "react-icons/fi"
+import { Apidata } from "../components/ContextApi"
 
 
 const ProductDetails = () => {
 let productId = useParams()
+let [singleProducts , setSingleproducts] = useState({})
 
 let singleProduct = ()=>{
     axios.get(`https://dummyjson.com/products/${productId.id}`).then((res)=>{
-      console.log(res.data);
+      setSingleproducts(res.data);
     })
 }
 useEffect(()=>{
    singleProduct()
 },[])
 
+let info = useContext(Apidata)
 let [count , setCount] = useState(0);
 let [ show ,setShow] = useState(false)
 let [ showOne , setShowOne] = useState(false)
@@ -30,6 +32,14 @@ let increment =()=>{
 let decrement =()=>{
   setCount(count-1);
 }
+let clientRating = Array.from({length:5},(_,index)=>{
+  let number = index + 0.5
+  return (
+    singleProducts.rating > index + 1 ? (<MdOutlineStarPurple500 /> ): singleProducts.rating > number ? <MdOutlineStarHalf /> :(<MdOutlineStarOutline />) 
+  );
+})
+
+
 
   return (
     <>
@@ -37,14 +47,12 @@ let decrement =()=>{
       <div className="lg:w-10/12 mx-auto">
         <div className="w-[50%]">
           <div className="">
-            <img src={detailsPro} alt="" />
-            <p className="text-[#262626] text-[16px] font-dm font-normal py-10">Lorem ipsum dolor, sit amet consectetur</p>
+            <img src={singleProducts.thumbnail} alt="" />
+            <p className="text-[#262626] text-[16px] font-dm font-normal py-10">{singleProducts.title}</p>
           </div>
           <div className="flex items-center gap-x-4 mt-8">
-            <div className="flex gap-x-3">
-              <MdOutlineStarPurple500 />
-              <MdOutlineStarHalf />
-              <MdOutlineStarOutline />
+            <div className="flex gap-x-3 text-amber-300">
+              {clientRating}
             </div>
             <div className="">
               <p className="text-[#262626] font-dm font-normal">Review</p>
