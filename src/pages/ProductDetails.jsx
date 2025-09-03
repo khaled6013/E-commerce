@@ -64,7 +64,7 @@ let clientRating = Array.from({length:5},(_,index)=>{
           </div>
           <div className="flex items-center gap-x-3 mt-5 border-b-1 border-[#F0F0F0] pb-2">
             <del className="font-bold font-dm text-[#262626]">$20</del>
-            <p className="font-bold font-dm text-[#262626]">$50</p>
+            <p className="font-bold font-dm text-[#262626]">${singleProducts.price}</p>
           </div>
           <div className="flex items-center gap-x-3 mt-5">
             <div className="">
@@ -106,7 +106,7 @@ let clientRating = Array.from({length:5},(_,index)=>{
             <p className="text-[#262626] font-bold font-dm text-[16px]">STATUS:</p>
            </div>
            <div className="">
-            <p className="text-[#767676] font-dm font-normal text-[16px]">In stock</p>
+            <p className="text-[#767676] font-dm font-normal text-[16px]">{singleProducts.availabilityStatus}</p>
            </div>
           </div>
           <div className="flex items-center mt-7 gap-x-3 border-b-1 pb-7 border-[#F0F0F0]">
