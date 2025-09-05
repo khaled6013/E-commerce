@@ -61,7 +61,10 @@ const Products = () => {
     }
     
   }
- 
+  let handleBrand =(bItem)=>{
+    let filterBrand = info.filter((item)=>item.brand == bItem)
+    setFilterCate(filterBrand)
+  }
  
   return (
     <>
@@ -127,7 +130,7 @@ const Products = () => {
                     </div>
                     <div className={`mt-8 ${ showOne ? "block":"hidden"}`}>
                       {brand.map((item)=>(
-                        <div className="border-b-[1px] border-[#F0F0F0] pb-2">
+                        <div className="border-b-[1px] border-[#F0F0F0] pb-2" onClick={()=>handleBrand(item)}>
                            <p className="text-[#767676] text-[16px] font-dm font-normal pt-2 cursor-pointer">{item}</p>
                         </div>
                       ))}
