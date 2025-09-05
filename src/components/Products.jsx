@@ -17,6 +17,8 @@ const Products = () => {
   let [ filterCate , setFilterCate] = useState([])
   let [ brand , setBrand] = useState([])
   let [active,setActive] = useState(false)
+  let [ low , setLow] = useState({})
+  let [ high , setHigh] = useState({})
   let lastPage = perPage * currentPage
   let firstPage = lastPage - perPage
   let allPage = info.slice(firstPage , lastPage)
@@ -65,6 +67,14 @@ const Products = () => {
     let filterBrand = info.filter((item)=>item.brand == bItem)
     setFilterCate(filterBrand)
   }
+  let handlePrice =(value)=>{
+   setLow(value.low);
+   setHigh(value.high);
+   let filterPrice = info.filter((item)=> item.price >value.low && item.price < value.high )
+   setFilterCate(filterPrice);
+  }
+ 
+  
  
   return (
     <>
@@ -137,23 +147,23 @@ const Products = () => {
                     </div>
                 </div>
                 <div className="mt-10 ">
-                    <div className="flex justify-between items-center cursor-pointer" >
+                    <div className="flex justify-between items-center" >
                         <h2 className="text-[#262626] text-[20px] font-dm font-bold">Shop by Price</h2>
                     </div>
                     <div className='mt-8'>
-                        <div className="border-b-[1px] border-[#F0F0F0] pb-3">
+                        <div className="border-b-[1px] border-[#F0F0F0] pb-3 cursor-pointer" onClick={()=>handlePrice({ low:0 , high:9.99 })}>
                            <p className="text-[#767676] text-[16px] font-dm font-normal">$0.00 - $9.99</p>
                         </div>
-                         <div className="border-b-[1px] border-[#F0F0F0] pb-3 pt-3">
+                         <div className="border-b-[1px] border-[#F0F0F0] pb-3 pt-3 cursor-pointer" onClick={()=>handlePrice({ low:10 , high:19.99 })}>
                            <p className="text-[#767676] text-[16px] font-dm font-normal">$10.00 - $19.99</p>
                         </div>
-                         <div className="border-b-[1px] border-[#F0F0F0] pb-3 pt-3">
+                         <div className="border-b-[1px] border-[#F0F0F0] pb-3 pt-3 cursor-pointer" onClick={()=>handlePrice({ low:20 , high:29.99 })}>
                            <p className="text-[#767676] text-[16px] font-dm font-normal">$20.00 - $29.99</p>
                         </div>
-                         <div className="border-b-[1px] border-[#F0F0F0] pb-3 pt-3">
+                         <div className="border-b-[1px] border-[#F0F0F0] pb-3 pt-3 cursor-pointer" onClick={()=>handlePrice({ low:30 , high:39.99 })}>
                            <p className="text-[#767676] text-[16px] font-dm font-normal">$30.00 - $39.99</p>
                         </div>
-                         <div className="border-b-[1px] border-[#F0F0F0] pb-3 pt-3">
+                         <div className="border-b-[1px] border-[#F0F0F0] pb-3 pt-3 cursor-pointer" onClick={()=>handlePrice({ low:40 , high:69.99 })}>
                            <p className="text-[#767676] text-[16px] font-dm font-normal">$40.00 - $69.99</p>
                         </div>
                     </div>
