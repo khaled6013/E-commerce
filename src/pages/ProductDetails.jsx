@@ -154,11 +154,26 @@ let AccuratePrice = singleProducts.price - MainPrice
                   </ul>
               </div>
               <div id="default-tab-content">
-                  <div class="hidden p-4 rounded-lg " id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro, necessitatibus.</p>
+                  <div class="hidden p-2 rounded-lg " id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                     {singleProducts.description}
                   </div>
-                  <div class="hidden p-4 rounded-lg " id="dashboard" role="tabpanel" aria-labelledby="dashboard-tab">
-                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, dolor debitis suscipit temporibus tempora porro?</p>
+                  <div class="hidden p-2 rounded-lg " id="dashboard" role="tabpanel" aria-labelledby="dashboard-tab">
+                     {singleProducts?.reviews?.map((item)=>(
+                       <>
+                       <div className="flex items-center justify-between">
+                        <div className="flex items-center gap-x-5">
+                          <p className="text-[16px] font-dm text-[#262626] mt-5">{item.reviewerName}</p>
+                          <p className="flex gap-x-2 text-amber-300 mt-5">{clientRating}</p>
+                        </div>
+                        <div className="">
+                          <p className="mt-5">{item.date}</p>
+                        </div>
+                       </div>
+                        <div className="mt-2">
+                          <p className="text-[#767676] text-[16px] font-dm font-normal">{item.comment}</p>
+                        </div>
+                       </>
+                     ))}
                   </div>
               </div>
           </div>
