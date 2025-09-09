@@ -43,6 +43,11 @@ let clientRating = Array.from({length:5},(_,index)=>{
   );
 })
 
+let MainPrice = (singleProducts.price / 100) * singleProducts.discountPercentage;
+let AccuratePrice = singleProducts.price - MainPrice
+
+
+
 
 
   return (
@@ -63,8 +68,8 @@ let clientRating = Array.from({length:5},(_,index)=>{
             </div>
           </div>
           <div className="flex items-center gap-x-3 mt-5 border-b-1 border-[#F0F0F0] pb-2">
-            <del className="font-bold font-dm text-[#262626]">$20</del>
-            <p className="font-bold font-dm text-[#262626]">${singleProducts.price}</p>
+            <del className="font-bold font-dm text-[#262626]">${singleProducts.price}</del>
+            <p className="font-bold font-dm text-[#262626]">${AccuratePrice.toFixed(2)}</p>
           </div>
           <div className="flex items-center gap-x-3 mt-5">
             <div className="">
@@ -136,6 +141,26 @@ let clientRating = Array.from({length:5},(_,index)=>{
             <div className={`pt-4 ${showOne == true ? "block":"hidden"}`}>
               <p className="font-dm text-[#767676] text-[16px] font-normal">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
             </div>
+          </div>
+          <div className="mt-5">
+              <div class="mb-4  ">
+                  <ul class="flex flex-wrap -mb-px text-sm font-medium text-center" id="default-tab" data-tabs-toggle="#default-tab-content" role="tablist">
+                      <li class="me-2" role="presentation">
+                          <button class="inline-block p-4 font-bold text-[20px] font-dm " id="profile-tab" data-tabs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Description</button>
+                      </li>
+                      <li class="me-2" role="presentation">
+                          <button class="inline-block p-4 font-bold text-[20px] font-dm " id="dashboard-tab" data-tabs-target="#dashboard" type="button" role="tab" aria-controls="dashboard" aria-selected="false">Reviews</button>
+                      </li>
+                  </ul>
+              </div>
+              <div id="default-tab-content">
+                  <div class="hidden p-4 rounded-lg " id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro, necessitatibus.</p>
+                  </div>
+                  <div class="hidden p-4 rounded-lg " id="dashboard" role="tabpanel" aria-labelledby="dashboard-tab">
+                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, dolor debitis suscipit temporibus tempora porro?</p>
+                  </div>
+              </div>
           </div>
         </div>
       </div>
