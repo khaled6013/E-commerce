@@ -43,11 +43,18 @@ let clientRating = Array.from({length:5},(_,index)=>{
   );
 })
 
+// const commandRating = Array.from({ length: 5 }, (_, starIndex) => {
+//   const number = starIndex + 0.5
+//   if (item.rating > starIndex + 1) {
+//       return (<MdOutlineStarPurple500 key={starIndex} />);
+//   } else if (item.rating > number) {
+//       return <MdOutlineStarHalf key={starIndex} />;
+//   } else {
+//       return (<MdOutlineStarOutline key={starIndex} />);
+// }})
+
 let MainPrice = (singleProducts.price / 100) * singleProducts.discountPercentage;
 let AccuratePrice = singleProducts.price - MainPrice
-
-
-
 
 
   return (
@@ -142,7 +149,9 @@ let AccuratePrice = singleProducts.price - MainPrice
               <p className="font-dm text-[#767676] text-[16px] font-normal">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
             </div>
           </div>
-          <div className="mt-5">
+          
+        </div>
+        <div className="mt-5">
               <div class="mb-4  ">
                   <ul class="flex flex-wrap -mb-px text-sm font-medium text-center" id="default-tab" data-tabs-toggle="#default-tab-content" role="tablist">
                       <li class="me-2" role="presentation">
@@ -158,26 +167,54 @@ let AccuratePrice = singleProducts.price - MainPrice
                      {singleProducts.description}
                   </div>
                   <div class="hidden p-2 rounded-lg " id="dashboard" role="tabpanel" aria-labelledby="dashboard-tab">
-                     {singleProducts?.reviews?.map((item)=>(
+                     {/* {singleProducts?.reviews?.map((item)=>(
                        <>
                        <div className="flex items-center justify-between">
                         <div className="flex items-center gap-x-5">
                           <p className="text-[16px] font-dm text-[#262626] mt-5">{item.reviewerName}</p>
-                          <p className="flex gap-x-2 text-amber-300 mt-5">{clientRating}</p>
+                          <p className="flex gap-x-1 text-amber-300 mt-5">{commandRating}</p>
                         </div>
                         <div className="">
-                          <p className="mt-5">{item.date}</p>
+                           <p className="mt-5">{new Date(item.date).toLocaleDateString("en-GB", { day: "2-digit", month: "short", year: "numeric" })}</p>
                         </div>
                        </div>
                         <div className="mt-2">
                           <p className="text-[#767676] text-[16px] font-dm font-normal">{item.comment}</p>
                         </div>
                        </>
-                     ))}
+                     ))} */}
+                      {singleProducts?.reviews?.map((item, index) => {
+                          const commandRating = Array.from({ length: 5 }, (_, starIndex) => {
+                              const number = starIndex + 0.5
+                              if (item.rating > starIndex + 1) {
+                                  return (<MdOutlineStarPurple500 key={starIndex} />);
+                              } else if (item.rating > number) {
+                                  return <MdOutlineStarHalf key={starIndex} />;
+                              } else {
+                                  return (<MdOutlineStarOutline key={starIndex} />);
+                              }
+                          });
+
+                          return (
+                              <div key={index}>
+                                  <div className="flex items-center justify-between">
+                                      <div className="flex items-center gap-x-5">
+                                          <p className="text-[16px] font-dm text-[#262626] mt-5">{item.reviewerName}</p>
+                                          <p className="flex gap-x-1 text-amber-300 mt-5">{commandRating}</p>
+                                      </div>
+                                      <div className="">
+                                          <p className="mt-5 text-[#767676] text-[16px] font-dm font-normal">{new Date(item.date).toLocaleDateString("en-GB", { day: "2-digit", month: "short", year: "numeric" })}</p>
+                                      </div>
+                                  </div>
+                                  <div className="mt-2 border-b-1 pb-5 border-[#F0F0F0]">
+                                      <p className="text-[#767676] text-[16px] font-dm font-normal">{item.comment}</p>
+                                  </div>
+                              </div>
+                          );
+                      })}
                   </div>
               </div>
           </div>
-        </div>
       </div>
     </div>
     </>
