@@ -25,6 +25,8 @@ let info = useContext(Apidata)
 let [count , setCount] = useState(0);
 let [ show ,setShow] = useState(false)
 let [ showOne , setShowOne] = useState(false)
+let [shoTwo , setShowTwo] = useState(false)
+let [show3 , setShow3] = useState(false)
 
 let increment =()=>{
   if(count < 10 ){
@@ -56,6 +58,7 @@ let clientRating = Array.from({length:5},(_,index)=>{
 let MainPrice = (singleProducts.price / 100) * singleProducts.discountPercentage;
 let AccuratePrice = singleProducts.price - MainPrice
 
+let [activeTab, setActiveTab] = useState("description")
 
   return (
     <>
@@ -143,79 +146,73 @@ let AccuratePrice = singleProducts.price - MainPrice
             <div className="items-center justify-between flex cursor-pointer" onClick={()=>setShowOne(!showOne)}>
               <p className="font-dm text-[#262626] text-[16px] font-bold">SHIPPING & RETURNS</p>
               {showOne ? <FiMinus /> : <GoPlus /> }
-              
             </div>
             <div className={`pt-4 ${showOne == true ? "block":"hidden"}`}>
               <p className="font-dm text-[#767676] text-[16px] font-normal">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
             </div>
           </div>
-          
         </div>
-        <div className="mt-5">
-              <div class="mb-4  ">
-                  <ul class="flex flex-wrap -mb-px text-sm font-medium text-center" id="default-tab" data-tabs-toggle="#default-tab-content" role="tablist">
-                      <li class="me-2" role="presentation">
-                          <button class="inline-block p-4 font-bold text-[20px] font-dm " id="profile-tab" data-tabs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Description</button>
-                      </li>
-                      <li class="me-2" role="presentation">
-                          <button class="inline-block p-4 font-bold text-[20px] font-dm " id="dashboard-tab" data-tabs-target="#dashboard" type="button" role="tab" aria-controls="dashboard" aria-selected="false">Reviews</button>
-                      </li>
-                  </ul>
-              </div>
-              <div id="default-tab-content">
-                  <div class="hidden p-2 rounded-lg " id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                     {singleProducts.description}
-                  </div>
-                  <div class="hidden p-2 rounded-lg " id="dashboard" role="tabpanel" aria-labelledby="dashboard-tab">
-                     {/* {singleProducts?.reviews?.map((item)=>(
-                       <>
-                       <div className="flex items-center justify-between">
-                        <div className="flex items-center gap-x-5">
-                          <p className="text-[16px] font-dm text-[#262626] mt-5">{item.reviewerName}</p>
-                          <p className="flex gap-x-1 text-amber-300 mt-5">{commandRating}</p>
-                        </div>
-                        <div className="">
-                           <p className="mt-5">{new Date(item.date).toLocaleDateString("en-GB", { day: "2-digit", month: "short", year: "numeric" })}</p>
-                        </div>
-                       </div>
-                        <div className="mt-2">
-                          <p className="text-[#767676] text-[16px] font-dm font-normal">{item.comment}</p>
-                        </div>
-                       </>
-                     ))} */}
-                      {singleProducts?.reviews?.map((item, index) => {
-                          const commandRating = Array.from({ length: 5 }, (_, starIndex) => {
-                              const number = starIndex + 0.5
-                              if (item.rating > starIndex + 1) {
-                                  return (<MdOutlineStarPurple500 key={starIndex} />);
-                              } else if (item.rating > number) {
-                                  return <MdOutlineStarHalf key={starIndex} />;
-                              } else {
-                                  return (<MdOutlineStarOutline key={starIndex} />);
-                              }
-                          });
+     
+            <div className="mt-5">
+            <ul className="flex space-x-10 mt-5">
+              <li>
+                <button 
+                  className={`inline-block font-bold text-[20px] font-dm ${activeTab === "description" ? "text-black" : "text-gray-500"}`}
+                  onClick={()=>setActiveTab("description")}
+                >
+                  Description
+                </button>
+              </li>
+              <li>
+                <button 
+                  className={`inline-block font-bold text-[20px] font-dm ${activeTab === "reviews" ? "text-black" : "text-gray-500"}`}
+                  onClick={()=>setActiveTab("reviews")}
+                >
+                  Reviews
+                </button>
+              </li>
+            </ul>
 
-                          return (
-                              <div key={index}>
-                                  <div className="flex items-center justify-between">
-                                      <div className="flex items-center gap-x-5">
-                                          <p className="text-[16px] font-dm text-[#262626] mt-5">{item.reviewerName}</p>
-                                          <p className="flex gap-x-1 text-amber-300 mt-5">{commandRating}</p>
-                                      </div>
-                                      <div className="">
-                                          <p className="mt-5 text-[#767676] text-[16px] font-dm font-normal">{new Date(item.date).toLocaleDateString("en-GB", { day: "2-digit", month: "short", year: "numeric" })}</p>
-                                      </div>
-                                  </div>
-                                  <div className="mt-2 border-b-1 pb-5 border-[#F0F0F0]">
-                                      <p className="text-[#767676] text-[16px] font-dm font-normal">{item.comment}</p>
-                                  </div>
-                              </div>
-                          );
-                      })}
-                  </div>
-              </div>
+            <div className="p-2">
+              {activeTab === "description" && (
+                <div>{singleProducts.description}</div>
+              )}
+              {activeTab === "reviews" && (
+                <div>
+                  {singleProducts?.reviews?.map((item, index) => {
+                    const commandRating = Array.from({ length: 5 }, (_, starIndex) => {
+                        const number = starIndex + 0.5
+                        if (item.rating > starIndex + 1) {
+                            return (<MdOutlineStarPurple500 key={starIndex} />);
+                        } else if (item.rating > number) {
+                            return <MdOutlineStarHalf key={starIndex} />;
+                        } else {
+                            return (<MdOutlineStarOutline key={starIndex} />);
+                        }
+                    });
+
+                    return (
+                        <div key={index}>
+                            <div className="flex items-center justify-between">
+                                <div className="flex items-center gap-x-5">
+                                    <p className="text-[16px] font-dm text-[#262626] mt-5">{item.reviewerName}</p>
+                                    <p className="flex gap-x-1 text-amber-300 mt-5">{commandRating}</p>
+                                </div>
+                                <p className="mt-5 text-[#767676] text-[16px] font-dm font-normal">
+                                  {new Date(item.date).toLocaleDateString("en-GB", { day: "2-digit", month: "short", year: "numeric" })}
+                                </p>
+                            </div>
+                            <div className="mt-2 border-b-1 pb-5 border-[#F0F0F0]">
+                                <p className="text-[#767676] text-[16px] font-dm font-normal">{item.comment}</p>
+                            </div>
+                        </div>
+                    );
+                  })}
+                </div>
+              )}
+            </div>
           </div>
-      </div>
+        </div>
     </div>
     </>
 
