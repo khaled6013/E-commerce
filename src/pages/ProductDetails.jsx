@@ -6,6 +6,8 @@ import { GoDotFill, GoPlus } from "react-icons/go"
 import { FaPlus } from "react-icons/fa"
 import { FiMinus } from "react-icons/fi"
 import { Apidata } from "../components/ContextApi"
+import { useDispatch } from "react-redux"
+import { addToCart } from "../components/slice/ProductSlice"
 
 
 const ProductDetails = () => {
@@ -27,6 +29,11 @@ let [ show ,setShow] = useState(false)
 let [ showOne , setShowOne] = useState(false)
 let [shoTwo , setShowTwo] = useState(false)
 let [show3 , setShow3] = useState(false)
+let dispatch = useDispatch()
+
+let handleCart =()=>{
+  dispatch(addToCart("khaled"))
+}
 
 let increment =()=>{
   if(count < 10 ){
@@ -44,16 +51,6 @@ let clientRating = Array.from({length:5},(_,index)=>{
     singleProducts.rating > index + 1 ? (<MdOutlineStarPurple500 /> ): singleProducts.rating > number ? <MdOutlineStarHalf /> :(<MdOutlineStarOutline />) 
   );
 })
-
-// const commandRating = Array.from({ length: 5 }, (_, starIndex) => {
-//   const number = starIndex + 0.5
-//   if (item.rating > starIndex + 1) {
-//       return (<MdOutlineStarPurple500 key={starIndex} />);
-//   } else if (item.rating > number) {
-//       return <MdOutlineStarHalf key={starIndex} />;
-//   } else {
-//       return (<MdOutlineStarOutline key={starIndex} />);
-// }})
 
 let MainPrice = (singleProducts.price / 100) * singleProducts.discountPercentage;
 let AccuratePrice = singleProducts.price - MainPrice
@@ -129,7 +126,7 @@ let [activeTab, setActiveTab] = useState("description")
               <a className="text-[#262626] font-dm font-bold text-[16px] hover:text-[#FFFFFF] hover:bg-black border-1 border-black py-[16px] px-[40px] cursor-pointer">Add to Wish List</a>
             </div>
             <div className="">
-              <a className="text-[#262626] font-dm font-bold text-[16px] hover:text-[#FFFFFF] hover:bg-black border-1 border-black py-[16px] px-[40px] cursor-pointer">Add to Cart</a>
+              <a onClick={handleCart} className="text-[#262626] font-dm font-bold text-[16px] hover:text-[#FFFFFF] hover:bg-black border-1 border-black py-[16px] px-[40px] cursor-pointer">Add to Cart</a>
             </div>
           </div>
           <div className=" mt-5  border-b-1 pb-5 border-[#F0F0F0]">
