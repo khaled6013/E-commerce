@@ -31,8 +31,10 @@ let [shoTwo , setShowTwo] = useState(false)
 let [show3 , setShow3] = useState(false)
 let dispatch = useDispatch()
 
-let handleCart =()=>{
-  dispatch(addToCart("khaled"))
+let handleCart =(item)=>{
+  // dispatch(addToCart(10))
+  console.log(item);
+  
 }
 
 let increment =()=>{
@@ -126,7 +128,7 @@ let [activeTab, setActiveTab] = useState("description")
               <a className="text-[#262626] font-dm font-bold text-[16px] hover:text-[#FFFFFF] hover:bg-black border-1 border-black py-[16px] px-[40px] cursor-pointer">Add to Wish List</a>
             </div>
             <div className="">
-              <a onClick={handleCart} className="text-[#262626] font-dm font-bold text-[16px] hover:text-[#FFFFFF] hover:bg-black border-1 border-black py-[16px] px-[40px] cursor-pointer">Add to Cart</a>
+              <a onClick={()=>handleCart(singleProducts)} className="text-[#262626] font-dm font-bold text-[16px] hover:text-[#FFFFFF] hover:bg-black border-1 border-black py-[16px] px-[40px] cursor-pointer">Add to Cart</a>
             </div>
           </div>
           <div className=" mt-5  border-b-1 pb-5 border-[#F0F0F0]">
