@@ -6,8 +6,8 @@ import { GoDotFill, GoPlus } from "react-icons/go"
 import { FaPlus } from "react-icons/fa"
 import { FiMinus } from "react-icons/fi"
 import { Apidata } from "../components/ContextApi"
-import { useDispatch } from "react-redux"
-import { addToCart } from "../components/slice/ProductSlice"
+// import { useDispatch } from "react-redux"
+// import { addToCart } from "../components/slice/ProductSlice"
 
 
 const ProductDetails = () => {
@@ -29,11 +29,11 @@ let [ show ,setShow] = useState(false)
 let [ showOne , setShowOne] = useState(false)
 let [shoTwo , setShowTwo] = useState(false)
 let [show3 , setShow3] = useState(false)
-let dispatch = useDispatch()
+
 
 let handleCart =(item)=>{
   // dispatch(addToCart(10))
-  console.log(item);
+  // console.log(item);
   
 }
 

@@ -1,5 +1,6 @@
 import Slider from 'react-slick';
 import bannerImg from '../assets/banner.png'
+import { useSelector } from 'react-redux';
 
 const Banner = () => {
     const settings = {
@@ -36,6 +37,9 @@ const Banner = () => {
       </div>
     )
   };
+  let data = useSelector((state)=>state.product.number)
+  console.log(data);
+  
   return (
     <>
       <div className="w-full">

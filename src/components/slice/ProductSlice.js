@@ -1,19 +1,21 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
-  cartItem: [],
+  products: "hi",
+  number: 200
 }
 
 export const ProductSlice = createSlice({
   name: 'product',
   initialState,
   reducers: {
-    addToCart: (state , action) => {
-     
-    },
+    allProduct: (state) => {
+      
+    }
   },
 })
 
-export const { addToCart } = ProductSlice.actions
+// Action creators are generated for each case reducer function
+export const { allProduct } = ProductSlice.actions
 
-export default ProductSlice.reducer;
+export default ProductSlice.reducer
