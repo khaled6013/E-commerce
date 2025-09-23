@@ -6,6 +6,7 @@ import { FaCaretRight } from "react-icons/fa";
 import { useEffect, useRef, useState } from 'react';
 import { RxCross2 } from 'react-icons/rx';
 import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 
 const NavbarB = () => {
@@ -108,11 +109,13 @@ const NavbarB = () => {
                                     }
                                 </div>
                                 <div className="relative">
-                                    <FaShoppingCart className='ml-7 cursor-pointer w-[60px]' ref={accTwoateref} />
+                                    <Link to='cart'>
+                                      <FaShoppingCart className='ml-7 cursor-pointer w-[60px]' ref={accTwoateref} />
+                                    </Link>
                                     <div className="absolute top-[-20px] right-0 ">
                                         <h1 className='text-red-700 font-dm font-bold text-[14px] bg-green-500 py-[3px] px-[8px]  rounded-[50%]'>{cartData.length}</h1> 
                                     </div>
-                                    {accateTwo &&
+                                    {/* {accateTwo &&
                                         <div className="absolute top-8 lg:right-[-30px] right-[-20px] z-99">
                                             <div className="bg-[#F5F5F3] py-5 w-[358px] pl-5">
                                                 <div className="flex items-center relative">
@@ -138,7 +141,7 @@ const NavbarB = () => {
                                                 </div>
                                             </div>
                                         </div>
-                                    }
+                                    } */}
                                 </div>
                             </div>
                         </div>

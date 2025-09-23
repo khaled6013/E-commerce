@@ -24,7 +24,6 @@ useEffect(()=>{
 },[])
 
 let info = useContext(Apidata)
-let [count , setCount] = useState(0);
 let [ show ,setShow] = useState(false)
 let [ showOne , setShowOne] = useState(false)
 let [shoTwo , setShowTwo] = useState(false)
@@ -35,16 +34,7 @@ let handleCart =(item)=>{
   dispatch(addToCart({...item , qun:1}))
 }
 
-let increment =()=>{
-  if(count < 10 ){
-    setCount(count+1);
-  }
-}
-let decrement =()=>{
-  if( count > 0){
-    setCount(count-1);
-  }
-}
+
 let clientRating = Array.from({length:5},(_,index)=>{
   let number = index + 0.5
   return (
@@ -90,28 +80,7 @@ let [activeTab, setActiveTab] = useState("description")
               <GoDotFill className="text-[#15CBA5] !w-[30px] h-[30px]" />
             </div>
           </div>
-          <div className="flex items-center gap-x-3 mt-5">
-            <div className="font-bold font-dm text-[#262626]">
-              <p>SIZE:</p>
-            </div>
-            <div className="">
-              <select name="" id="" className="border-[#F0F0F0] border-1 px-5">
-                <option value="">s</option>
-                <option value="">M</option>
-                <option value="">L</option>
-                <option value="">XL</option>
-              </select>
-            </div>
-          </div>
           <div className="flex items-center mt-5 gap-x-3 border-b-1 pb-5 border-[#F0F0F0]">
-            <div className="">
-              <p className="font-bold font-dm text-[#262626]">QUANTITY:</p>
-            </div>
-            <div className="flex items-center gap-x-3 border-1 border-[#F0F0F0] px-5 border-b-1 ">   
-             <button onClick={increment} className="cursor-pointer"><GoPlus /></button>
-             <p>{count}</p>
-             <button onClick={decrement } className="cursor-pointer"><FiMinus /></button>
-            </div>
           </div>
           <div className="flex items-center mt-5 gap-x-3 border-b-1 pb-5 border-[#F0F0F0]">
            <div className="">
