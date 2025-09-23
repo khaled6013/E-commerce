@@ -38,7 +38,7 @@ const Banner = () => {
     )
   };
   let data = useSelector((state)=>state.product.number)
-  console.log(data);
+
   
   return (
     <>

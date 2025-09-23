@@ -66,7 +66,7 @@ const Arrivals = () => {
     )
   };
   let data = useContext(Apidata);
-  console.log(data);
+  // console.logs
   
   return (
     <>

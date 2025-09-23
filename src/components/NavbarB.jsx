@@ -5,6 +5,7 @@ import { FaShoppingCart } from "react-icons/fa";
 import { FaCaretRight } from "react-icons/fa";
 import { useEffect, useRef, useState } from 'react';
 import { RxCross2 } from 'react-icons/rx';
+import { useSelector } from 'react-redux';
 
 
 const NavbarB = () => {
@@ -14,24 +15,29 @@ const NavbarB = () => {
     let [cate, setCeta] = useState(false)
     let [accate, setacCeta] = useState(false)
     let [accateTwo, setacCetaTwo] = useState(false)
-
-    document.addEventListener("click", (e) => {
-        if (cateref.current.contains(e.target) == true) {
-            setCeta(!cate)
-        } else {
-            setCeta(false)
-        }
-        if (accateref.current.contains(e.target) == true) {
-            setacCeta(!accate)
-        } else {
-            setacCeta(false)
-        }
-        if (accTwoateref.current.contains(e.target) == true) {
-            setacCetaTwo(!accateTwo)
-        } else {
-            setacCetaTwo(false)
-        }
-    });
+    let cartData = useSelector((state)=>state.product.cardItem)
+    // console.log(cartData.product.cardItem);
+    
+    
+    useEffect(()=>{
+        document.addEventListener("click", (e) => {
+            if (cateref.current.contains(e.target) == true) {
+                setCeta(!cate)
+            } else {
+                setCeta(false)
+            }
+            if (accateref.current.contains(e.target) == true) {
+                setacCeta(!accate)
+            } else {
+                setacCeta(false)
+            }
+            if (accTwoateref.current.contains(e.target) == true) {
+                setacCetaTwo(!accateTwo)
+            } else {
+                setacCetaTwo(false)
+            }
+        });
+    })
 
     return (
         <>
@@ -89,7 +95,7 @@ const NavbarB = () => {
                         <div className="w-1/7">
                             <div className="flex justify-end">
                                 <div className="relative">
-                                    <FaUser className='cursor-pointer ' ref={accateref} />
+                                    <FaUser className='cursor-pointer w-[60px]' ref={accateref} />
                                     {accate &&
                                         <div className=" absolute top-[22px] right-0 z-99">
                                             <div className="bg-black py-4 px-[59px] cursor-pointer">
@@ -102,7 +108,10 @@ const NavbarB = () => {
                                     }
                                 </div>
                                 <div className="relative">
-                                    <FaShoppingCart className='ml-7 cursor-pointer' ref={accTwoateref} />
+                                    <FaShoppingCart className='ml-7 cursor-pointer w-[60px]' ref={accTwoateref} />
+                                    <div className="absolute top-[-20px] right-0 ">
+                                        <h1 className='text-red-700 font-dm font-bold text-[14px] bg-green-500 py-[3px] px-[8px]  rounded-[50%]'>{cartData.length}</h1> 
+                                    </div>
                                     {accateTwo &&
                                         <div className="absolute top-8 lg:right-[-30px] right-[-20px] z-99">
                                             <div className="bg-[#F5F5F3] py-5 w-[358px] pl-5">
