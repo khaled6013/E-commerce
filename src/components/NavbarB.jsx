@@ -41,7 +41,7 @@ const NavbarB = () => {
 
     return (
         <>
-            <div className="bg-[#F5F5F3] lg:py-[30px] py-4">
+            <div className="bg-[#F5F5F3] lg:py-[20px] py-3 z-99 sticky top-0  right-0 left-0">
                 <div className="lg:w-10/12 mx-auto w-11/12">
                     <div className="flex items-center">
                         <div className="w-2/7 relative">
