@@ -3,15 +3,15 @@ import { useContext, useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import { MdOutlineStarHalf, MdOutlineStarOutline, MdOutlineStarPurple500 } from "react-icons/md"
 import { GoDotFill, GoPlus } from "react-icons/go"
-import { FaPlus } from "react-icons/fa"
 import { FiMinus } from "react-icons/fi"
 import { Apidata } from "../components/ContextApi"
-// import { useDispatch } from "react-redux"
-// import { addToCart } from "../components/slice/ProductSlice"
+import { addToCart } from "../components/slice/ProductSlice"
+import { useDispatch } from "react-redux"
 
 
 const ProductDetails = () => {
 let productId = useParams()
+let dispatch = useDispatch()
 let [singleProducts , setSingleproducts] = useState({})
 
 let singleProduct = ()=>{
@@ -32,9 +32,7 @@ let [show3 , setShow3] = useState(false)
 
 
 let handleCart =(item)=>{
-  // dispatch(addToCart(10))
-  // console.log(item);
-  
+  dispatch(addToCart({...item , qun:1}))
 }
 
 let increment =()=>{
