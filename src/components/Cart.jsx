@@ -1,24 +1,29 @@
 import { RxCross2 } from "react-icons/rx"
-import cartImg from '../assets/cartI.png'
 import { useState } from "react"
 import { FiMinus } from "react-icons/fi"
 import { GoPlus } from "react-icons/go"
-
-
-
+import { useDispatch, useSelector } from "react-redux"
+import { cartRemove } from "./slice/ProductSlice"
 
 
 const Cart = () => {
     let [ count , setCount] = useState(0);
 
-    let increment =()=>{
+  let increment =()=>{
     setCount(count+1)
    }
-   let decrement =()=>{
+  let decrement =()=>{
     if( count > 0){
      setCount(count-1)
     }
+   }
+   
+  let cartData = useSelector((state)=>state.product.cardItem)
+  let dispatch = useDispatch()
+  let hendleRemove =(item)=>{
+    dispatch(cartRemove(item))
   }
+  
   return (
     <>
      <div className="py-[80px]">
@@ -44,13 +49,15 @@ const Cart = () => {
                   </div>
                </div>
             </div>
-            <div className="w-full px-[20px] py-[30px]  border-b-1 border-[#F0F0F0]">
-              <div className="flex justify-between items-center">
+            <div className="w-full px-[20px] py-[5px]  border-b-1 border-[#F0F0F0]">
+              {cartData.length > 0? 
+               cartData.map((item)=>(
+                <div className="flex justify-between items-center">
                   <div className="w-3/10">
                     <div className="flex items-center gap-x-5">
-                        <RxCross2 className="cursor-pointer"/>
-                        <img src={cartImg} alt="" />
-                        <p className="text-[16px] font-dm text-[#262626] font-bold">Product name</p>
+                        <RxCross2 className="cursor-pointer" onClick={()=>hendleRemove(item)}/>
+                        <img src={item.thumbnail} alt="" className="w-[100px]" />
+                        <p className="text-[16px] font-dm text-[#262626] font-bold">{item.title}</p>
                     </div>
                   </div>
                   <div className="w-3/10">
@@ -60,7 +67,7 @@ const Cart = () => {
                   <div className="w-2/9">
                     <div className="flex items-center gap-x-4 border-1 border-[#F0F0F0] px-3">
                         <button className="cursor-pointer" onClick={decrement}><FiMinus /></button>
-                         <p>{count}</p>
+                         <p>{item.qun}</p>
                          <button className="cursor-pointer" onClick={increment}><GoPlus /></button>
                     </div>
                   </div>
@@ -69,6 +76,10 @@ const Cart = () => {
                     <h1 className="text-[16px] font-dm text-[#262626] font-bold">$54.00</h1>
                   </div>
                </div>
+               ))
+              :
+               <h2>no product</h2>
+              }
             </div>
           </div>
         </div>

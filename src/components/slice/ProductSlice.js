@@ -15,10 +15,14 @@ export const ProductSlice = createSlice({
       }else{
         state.cardItem = [...state.cardItem , action.payload]
       }
+    },
+    cartRemove : (state , action)=>{
+      let filterCart = state.cardItem.filter((item)=> item.id != action.payload.id)
+      state.cardItem = filterCart
     }
   },
 })
 
-export const { addToCart } = ProductSlice.actions
+export const { addToCart ,cartRemove } = ProductSlice.actions
 
 export default ProductSlice.reducer
