@@ -1,5 +1,4 @@
 import { RxCross2 } from "react-icons/rx"
-import { useState } from "react"
 import { FiMinus } from "react-icons/fi"
 import { GoPlus } from "react-icons/go"
 import { useDispatch, useSelector } from "react-redux"
@@ -7,25 +6,18 @@ import { cartRemove ,incrementQty , decrementQty} from "./slice/ProductSlice"
 
 
 const Cart = () => {
-    let [ count , setCount] = useState(0);
 
-  let increment =()=>{
-    setCount(count+1)
-   }
-  let decrement =()=>{
-    if( count > 0){
-     setCount(count-1)
-    }
-   }
-
-   
-   
   let cartData = useSelector((state)=>state.product.cardItem)
   let dispatch = useDispatch()
   let hendleRemove =(item)=>{
     dispatch(cartRemove(item))
   }
-  
+
+  let grandTotal = cartData.reduce((acc, item) => {
+  let discountPrice = (item.price - (item.price * item.discountPercentage / 100))
+  return acc + (discountPrice * item.qun)
+  }, 0)
+
   return (
     <>
      <div className="py-[80px]">
@@ -83,7 +75,19 @@ const Cart = () => {
                <h2>no product</h2>
               }
             </div>
-            
+            <div className="mt-[60px] w-10/10">
+              <div className="flex items-center border-[1px] border-[#F0F0F0]  px-[20px] w-2/10">
+                <div className="border-r-2 border-[#F0F0F0] py-[17px]">
+                  <h1 className="font-dm font-bold text-[16px] text-[#262626] pr-[110px]">Total</h1>
+                </div>
+                <div className="">
+                  <h1 className="font-dm font-bold text-[16px] text-[#262626] pl-[20px]">${grandTotal.toFixed(2)}</h1>
+                </div>
+              </div>
+              <div className="mt-[50px]">
+                  <a className="py-[16px] px-[25px] text-white bg-[#262626] font-bold font-dm cursor-pointer hover:bg-[#3a3737]">Proceed to Checkout</a>
+                </div>
+            </div>
           </div>
         </div>
      </div>
