@@ -3,7 +3,7 @@ import { useState } from "react"
 import { FiMinus } from "react-icons/fi"
 import { GoPlus } from "react-icons/go"
 import { useDispatch, useSelector } from "react-redux"
-import { cartRemove } from "./slice/ProductSlice"
+import { cartRemove ,incrementQty , decrementQty} from "./slice/ProductSlice"
 
 
 const Cart = () => {
@@ -68,14 +68,14 @@ const Cart = () => {
                   <div className="w-3/10">
                   <div className="w-2/9">
                     <div className="flex items-center gap-x-4 border-1 border-[#F0F0F0] px-3">
-                        <button className="cursor-pointer" onClick={decrement}><FiMinus /></button>
+                        <button className="cursor-pointer" onClick={() => dispatch(decrementQty(item))}><FiMinus /></button>
                          <p>{item.qun}</p>
-                         <button className="cursor-pointer" onClick={increment}><GoPlus /></button>
+                         <button className="cursor-pointer" onClick={() => dispatch(incrementQty(item))}><GoPlus /></button>
                     </div>
                   </div>
                   </div>
                   <div className="w-1/10">
-                    <h1 className="text-[16px] font-dm text-[#262626] font-bold">$54.00</h1>
+                    <h1 className="text-[16px] font-dm text-[#262626] font-bold">${((item.price - (item.price * item.discountPercentage / 100)) * item.qun).toFixed(2)}</h1>
                   </div>
                </div>
                ))
@@ -83,6 +83,7 @@ const Cart = () => {
                <h2>no product</h2>
               }
             </div>
+            
           </div>
         </div>
      </div>
