@@ -17,6 +17,8 @@ const Cart = () => {
      setCount(count-1)
     }
    }
+
+   
    
   let cartData = useSelector((state)=>state.product.cardItem)
   let dispatch = useDispatch()
@@ -61,7 +63,7 @@ const Cart = () => {
                     </div>
                   </div>
                   <div className="w-3/10">
-                    <h1 className="text-[16px] font-dm text-[#262626] font-bold">$44.00</h1>
+                    <h1 className="text-[16px] font-dm text-[#262626] font-bold">$ { (item.price - (item.price * item.discountPercentage / 100)).toFixed(2) }</h1>
                   </div>
                   <div className="w-3/10">
                   <div className="w-2/9">
