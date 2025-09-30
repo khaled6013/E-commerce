@@ -3,10 +3,10 @@ import { IoSearch } from "react-icons/io5";
 import { FaUser } from "react-icons/fa6";
 import { FaShoppingCart } from "react-icons/fa";
 import { FaCaretRight } from "react-icons/fa";
-import { useEffect, useRef, useState } from 'react';
-import { RxCross2 } from 'react-icons/rx';
+import { useContext, useEffect, useRef, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { Apidata } from './ContextApi';
 
 
 const NavbarB = () => {
@@ -16,9 +16,10 @@ const NavbarB = () => {
     let [cate, setCeta] = useState(false)
     let [accate, setacCeta] = useState(false)
     let [accateTwo, setacCetaTwo] = useState(false)
+    let [search , setSearch] = useState([])
+    let [searchModel , setSearchModel] = useState(false)
     let cartData = useSelector((state)=>state.product.cardItem)
-    // console.log(cartData.product.cardItem);
-    
+    let data = useContext(Apidata)
     
     useEffect(()=>{
         document.addEventListener("click", (e) => {
@@ -38,8 +39,18 @@ const NavbarB = () => {
                 setacCetaTwo(false)
             }
         });
-    })
+    },[])
 
+    let handleSearch =(e)=>{
+        if(e.target.value){
+            setSearchModel(true)
+            let productSearch = data.filter((item)=>item.title.toLowerCase().includes(e.target.value.toLowerCase()));
+            setSearch(productSearch);
+        }else{
+            setSearchModel(false)
+        }
+    }
+    
     return (
         <>
             <div className="bg-[#F5F5F3] lg:py-[20px] py-3 z-99 sticky top-0  right-0 left-0">
@@ -86,10 +97,20 @@ const NavbarB = () => {
                         <div className="w-4/7">
                             <div className="flex">
                                 <div className="relative">
-                                    <form action="#" className=''>
+                                    <form  className='' onChange={handleSearch}>
                                         <input type="text" placeholder='Search Products' className='border-none bg-white lg:py-4 py-3 lg:pl-5 pl-2 pr-10 lg:w-[560px] w-[250px] outline-0' />
                                     </form>
                                     <IoSearch className='absolute top-4 right-3 lg:text-[24px]' />
+                                    {searchModel && 
+                                    <div className=" w-full absolute left-0 z-99 h-[250px] bg-[#262626]  overflow-y-scroll ">
+                                      {search.map((item)=>(
+                                        <div className="flex items-center gap-y-3 hover:bg-gray-600 border-b-[1px] border-[#262626] cursor-pointer">
+                                            <img src={item.thumbnail} alt="" className='w-[40px]'/>
+                                            <p className='text-[16px] text-white font-dm'>{item.title}</p>
+                                        </div>
+                                      ))}
+                                    </div>
+                                    }
                                 </div>
                             </div>
                         </div>
