@@ -10,6 +10,7 @@ import { useDispatch } from "react-redux"
 
 
 const ProductDetails = () => {
+window.scrollTo(0,0)
 let productId = useParams()
 let dispatch = useDispatch()
 let [singleProducts , setSingleproducts] = useState({})

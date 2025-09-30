@@ -10,6 +10,7 @@ import { Apidata } from './ContextApi';
 
 
 const NavbarB = () => {
+    
     let cateref = useRef()
     let accateref = useRef()
     let accTwoateref = useRef()
@@ -104,10 +105,12 @@ const NavbarB = () => {
                                     {searchModel && 
                                     <div className=" w-full absolute left-0 z-99 h-[250px] bg-[#262626]  overflow-y-scroll ">
                                       {search.map((item)=>(
-                                        <div className="flex items-center gap-y-3 hover:bg-gray-600 border-b-[1px] border-[#262626] cursor-pointer">
-                                            <img src={item.thumbnail} alt="" className='w-[40px]'/>
-                                            <p className='text-[16px] text-white font-dm'>{item.title}</p>
-                                        </div>
+                                        <Link to={`/shop/${item.id}`}>
+                                            <div className="flex items-center gap-y-3 hover:bg-gray-600 border-b-[1px] border-[#262626] cursor-pointer">
+                                                <img src={item.thumbnail} alt="" className='w-[40px]'/>
+                                                <p className='text-[16px] text-white font-dm'>{item.title}</p>
+                                            </div>
+                                        </Link>
                                       ))}
                                     </div>
                                     }
