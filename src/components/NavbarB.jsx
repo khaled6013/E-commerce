@@ -10,19 +10,19 @@ import { Apidata } from './ContextApi';
 
 
 const NavbarB = () => {
-    
+
     let cateref = useRef()
     let accateref = useRef()
     let accTwoateref = useRef()
     let [cate, setCeta] = useState(false)
     let [accate, setacCeta] = useState(false)
     let [accateTwo, setacCetaTwo] = useState(false)
-    let [search , setSearch] = useState([])
-    let [searchModel , setSearchModel] = useState(false)
-    let cartData = useSelector((state)=>state.product.cardItem)
+    let [search, setSearch] = useState([])
+    let [searchModel, setSearchModel] = useState(false)
+    let cartData = useSelector((state) => state.product.cardItem)
     let data = useContext(Apidata)
-    
-    useEffect(()=>{
+
+    useEffect(() => {
         document.addEventListener("click", (e) => {
             if (cateref.current.contains(e.target) == true) {
                 setCeta(!cate)
@@ -40,18 +40,18 @@ const NavbarB = () => {
                 setacCetaTwo(false)
             }
         });
-    },[])
+    }, [])
 
-    let handleSearch =(e)=>{
-        if(e.target.value){
+    let handleSearch = (e) => {
+        if (e.target.value) {
             setSearchModel(true)
-            let productSearch = data.filter((item)=>item.title.toLowerCase().includes(e.target.value.toLowerCase()));
+            let productSearch = data.filter((item) => item.title.toLowerCase().includes(e.target.value.toLowerCase()));
             setSearch(productSearch);
-        }else{
+        } else {
             setSearchModel(false)
         }
     }
-    
+
     return (
         <>
             <div className="bg-[#F5F5F3] lg:py-[20px] py-3 z-99 sticky top-0  right-0 left-0">
@@ -98,22 +98,28 @@ const NavbarB = () => {
                         <div className="w-4/7">
                             <div className="flex">
                                 <div className="relative">
-                                    <form  className='' onChange={handleSearch}>
+                                    <form className='' onChange={handleSearch}>
                                         <input type="text" placeholder='Search Products' className='border-none bg-white lg:py-4 py-3 lg:pl-5 pl-2 pr-10 lg:w-[560px] w-[250px] outline-0' />
                                     </form>
                                     <IoSearch className='absolute top-4 right-3 lg:text-[24px]' />
-                                    {searchModel && 
-                                    <div className=" w-full absolute left-0 z-99 h-[250px] bg-[#262626]  overflow-y-scroll ">
-                                      {search.map((item)=>(
-                                        <Link to={`/shop/${item.id}`}>
-                                            <div className="flex items-center gap-y-3 hover:bg-gray-600 border-b-[1px] border-[#262626] cursor-pointer">
-                                                <img src={item.thumbnail} alt="" className='w-[40px]'/>
-                                                <p className='text-[16px] text-white font-dm'>{item.title}</p>
-                                            </div>
-                                        </Link>
-                                      ))}
-                                    </div>
-                                    }
+                                    {searchModel && (
+                                        <div className="w-full absolute left-0 z-99 h-[250px] bg-[#262626] overflow-y-scroll">
+                                            {search.length > 0 ? (
+                                                search.map((item) => (
+                                                    <Link to={`/shop/${item.id}`} key={item.id}>
+                                                        <div className="flex items-center gap-y-3 hover:bg-gray-600 border-b-[1px] border-[#262626] cursor-pointer">
+                                                            <img src={item.thumbnail} alt="" className="w-[40px]" />
+                                                            <p className="text-[16px] text-white font-dm">{item.title}</p>
+                                                        </div>
+                                                    </Link>
+                                                ))
+                                            ) : (
+                                                <div className="flex items-center justify-center h-full">
+                                                    <p className="text-white text-[16px] font-dm">No Product Found</p>
+                                                </div>
+                                            )}
+                                        </div>
+                                    )}
                                 </div>
                             </div>
                         </div>
@@ -134,10 +140,10 @@ const NavbarB = () => {
                                 </div>
                                 <div className="relative">
                                     <Link to='cart'>
-                                      <FaShoppingCart className='ml-7 cursor-pointer w-[60px]' ref={accTwoateref} />
+                                        <FaShoppingCart className='ml-7 cursor-pointer w-[60px]' ref={accTwoateref} />
                                     </Link>
                                     <div className="absolute top-[-20px] right-0 ">
-                                        <h1 className='text-red-700 font-dm font-bold text-[14px] bg-green-500 py-[3px] px-[8px]  rounded-[50%]'>{cartData.length}</h1> 
+                                        <h1 className='text-red-700 font-dm font-bold text-[14px] bg-green-500 py-[3px] px-[8px]  rounded-[50%]'>{cartData.length}</h1>
                                     </div>
                                     {/* {accateTwo &&
                                         <div className="absolute top-8 lg:right-[-30px] right-[-20px] z-99">
