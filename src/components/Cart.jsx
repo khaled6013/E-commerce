@@ -3,6 +3,7 @@ import { FiMinus } from "react-icons/fi"
 import { GoPlus } from "react-icons/go"
 import { useDispatch, useSelector } from "react-redux"
 import { cartRemove ,incrementQty , decrementQty} from "./slice/ProductSlice"
+import { Link } from "react-router-dom"
 
 
 const Cart = () => {
@@ -85,8 +86,10 @@ const Cart = () => {
                 </div>
               </div>
               <div className="mt-[50px]">
-                  <a className="py-[16px] px-[25px] text-white bg-[#262626] font-bold font-dm cursor-pointer hover:bg-[#3a3737]">Proceed to Checkout</a>
-                </div>
+                <Link to='/checkout' className="py-[16px] px-[25px] text-white bg-[#262626] font-bold font-dm cursor-pointer hover:bg-[#3a3737]">
+                   Proceed to Checkout
+                </Link>
+              </div>
             </div>
           </div>
         </div>

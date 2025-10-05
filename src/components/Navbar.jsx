@@ -2,10 +2,13 @@ import { FaBars } from "react-icons/fa";
 import { RxCross2 } from "react-icons/rx";
 import logo from '../assets/logo.png'
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link , useLocation } from "react-router-dom";
 
 const Navbar = () => {
     let [manu,setManu] = useState(false)
+    let location = useLocation()
+    console.log();
+    
     return (
         <>
             <div className="py-8">
@@ -17,10 +20,10 @@ const Navbar = () => {
                         <div className="lg:w-4/6">
                             <ul className={`lg:flex lg:gap-x-10 duration-200 ease-in-out ${manu == true ? "block" : "hidden"}`}>
                                 <li className='lg:pt-0 pt-1'>
-                                    <Link to='/' className='text-[#767676] text-[14px] font-dm font-normal hover:font-bold'>Home</Link>
+                                    <Link to='/' className={` ${location.pathname == "/" ? "font-bold text-[#262626]": "font-normal text-[#767676]" }  text-[14px] font-dm  hover:font-bold`}>Home</Link>
                                 </li>
                                 <li className='lg:pt-0 pt-1'>
-                                    <Link to='/shop' className="text-[#767676] text-[14px] font-dm font-normal hover:font-bold">Shop</Link>
+                                    <Link to='/shop' className={`${location.pathname == "/shop" ? "font-bold text-[#262626]": "font-normal text-[#767676]" } text-[14px] font-dm  hover:font-bold`}>Shop</Link>
                                 </li>
                                 <li className='lg:pt-0 pt-1'>
                                     <a href="#" className='text-[#767676] text-[14px] font-dm font-normal hover:font-bold'>About</a>
