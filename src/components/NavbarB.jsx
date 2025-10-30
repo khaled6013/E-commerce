@@ -54,68 +54,84 @@ const NavbarB = () => {
 
     return (
         <>
-            <div className="bg-[#F5F5F3] lg:py-[20px] py-3 z-99 sticky top-0  right-0 left-0">
+            <div className="bg-[#F5F5F3] lg:py-[20px] py-3 z-50 sticky top-0 right-0 left-0">
                 <div className="lg:w-10/12 mx-auto w-11/12">
-                    <div className="flex items-center">
-                        <div className="w-2/7 relative">
-                            <div className="flex items-center " >
-                                <img src={categoryIcon} alt="categoryIcon" className='lg:w-[22px] w-[12px]' />
-                                <p className='text-[#262626] lg:text-[14px] text-[13px] font-dm font-normal pl-2 cursor-pointer' ref={cateref}>Shop by Category</p>
+                    <div className="flex items-center justify-between flex-wrap">
+                        {/* Category Section */}
+                        <div className="lg:w-2/7 md:w-3/7 w-full relative mb-3 lg:mb-0">
+                            <div className="flex items-center" >
+                                <img
+                                    src={categoryIcon}
+                                    ref={cateref}
+                                    alt="categoryIcon"
+                                    className="lg:w-[22px] w-[16px] cursor-pointer"
+                                />
+                                <p className="text-[#262626] lg:text-[14px] text-[13px] font-dm font-normal pl-2 cursor-pointer" ref={cateref}>
+                                    Shop by Category
+                                </p>
                             </div>
-                            {cate &&
-                                <div className={`absolute top-9 left-0 duration-200 ease-in-out z-99`}>
+
+                            {cate && (
+                                <div
+                                    className={`absolute top-9 left-0 duration-200 ease-in-out z-50 w-max`}
+                                >
                                     <div className="bg-[#2D2D2D] pt-[16px] pl-[20px] pr-[23px]">
                                         <ul>
-                                            <div className="flex items-center border-b-2 border-[#ffffff42] pb-3">
-                                                <a href="" className='text-[#FFFFFFB2] text-[14px] font-dm font-normal hover:font-bold hover:text-[#FFFFFF]'>Accesories</a>
-                                                < FaCaretRight className='ml-[130px] text-[#FFFFFFB2]' />
-                                            </div>
-                                            <div className="flex items-center border-b-2 border-[#ffffff62] pb-3 pt-3">
-                                                <a href="" className='text-[#FFFFFFB2] text-[14px] font-dm font-normal hover:font-bold hover:text-[#FFFFFF]'>Furniture</a>
-                                                < FaCaretRight className='ml-[143px] text-[#FFFFFFB2]' />
-                                            </div>
-                                            <div className="flex items-center border-b-2 border-[#ffffff62] pb-3 pt-3">
-                                                <a href="" className='text-[#FFFFFFB2] text-[14px] font-dm font-normal hover:font-bold hover:text-[#FFFFFF]'>Electronics</a>
-                                                < FaCaretRight className='ml-[130px] text-[#FFFFFFB2]' />
-                                            </div>
-                                            <div className="flex items-center border-b-2 border-[#ffffff62] pb-3 pt-3">
-                                                <a href="" className='text-[#FFFFFFB2] text-[14px] font-dm font-normal hover:font-bold hover:text-[#FFFFFF]'>Clothes</a>
-                                                < FaCaretRight className='ml-[152px] text-[#FFFFFFB2]' />
-                                            </div>
-                                            <div className="flex items-center border-b-2 border-[#ffffff62] pb-3 pt-3">
-                                                <a href="" className='text-[#FFFFFFB2] text-[14px] font-dm font-normal hover:font-bold hover:text-[#FFFFFF]'>Bags</a>
-                                                < FaCaretRight className='ml-[167px] text-[#FFFFFFB2]' />
-                                            </div>
-                                            <div className="flex items-center border-b-2 border-[#ffffff62] pb-3 pt-3">
-                                                <a href="" className='text-[#FFFFFFB2] text-[14px] font-dm font-normal hover:font-bold hover:text-[#FFFFFF]'>Home appliances</a>
-                                                < FaCaretRight className='ml-[91px] text-[#FFFFFFB2]' />
-                                            </div>
+                                            {[
+                                                "Accessories",
+                                                "Furniture",
+                                                "Electronics",
+                                                "Clothes",
+                                                "Bags",
+                                                "Home appliances",
+                                            ].map((item, index) => (
+                                                <div
+                                                    key={index}
+                                                    className="flex items-center justify-between border-b-2 border-[#ffffff42] py-3"
+                                                >
+                                                    <a className="text-[#FFFFFFB2] text-[14px] font-dm font-normal hover:font-bold hover:text-[#FFFFFF]">
+                                                        {item}
+                                                    </a>
+                                                    <FaCaretRight className="text-[#FFFFFFB2]" />
+                                                </div>
+                                            ))}
                                         </ul>
                                     </div>
                                 </div>
-                            }
+                            )}
                         </div>
-                        <div className="w-4/7">
-                            <div className="flex">
-                                <div className="relative">
-                                    <form className='' onChange={handleSearch}>
-                                        <input type="text" placeholder='Search Products' className='border-none bg-white lg:py-4 py-3 lg:pl-5 pl-2 pr-10 lg:w-[560px] w-[250px] outline-0' />
+
+                        {/* Search Section */}
+                        <div className="lg:w-4/7 md:w-3/5 w-full mb-3 lg:mb-0">
+                            <div className="flex justify-center lg:justify-start">
+                                <div className="relative w-full">
+                                    <form className="" onChange={handleSearch}>
+                                        <input
+                                            type="text"
+                                            placeholder="Search Products"
+                                            className="border-none bg-white lg:py-4 py-3 lg:pl-5 pl-3 pr-10 w-full outline-0 text-[14px]"
+                                        />
                                     </form>
-                                    <IoSearch className='absolute top-4 right-3 lg:text-[24px]' />
+                                    <IoSearch className="absolute top-1/2 -translate-y-1/2 right-3 lg:text-[22px] text-[18px]" />
+
                                     {searchModel && (
-                                        <div className="w-full absolute left-0 z-99 h-[250px] bg-[#262626] overflow-y-scroll">
+                                        <div className="w-full absolute left-0 z-50 h-[250px] bg-[#262626] overflow-y-scroll">
                                             {search.length > 0 ? (
                                                 search.map((item) => (
                                                     <Link to={`/shop/${item.id}`} key={item.id}>
-                                                        <div className="flex items-center gap-y-3 hover:bg-gray-600 border-b-[1px] border-[#262626] cursor-pointer">
+                                                        <div className="flex items-center gap-3 hover:bg-gray-600 border-b-[1px] border-[#262626] cursor-pointer p-2">
                                                             <img src={item.thumbnail} alt="" className="w-[40px]" />
-                                                            <p className="text-[16px] text-white font-dm">{item.title}</p>
+                                                            <p className="text-[16px] text-white font-dm">
+                                                                {item.title}
+                                                            </p>
                                                         </div>
                                                     </Link>
                                                 ))
                                             ) : (
                                                 <div className="flex items-center justify-center h-full">
-                                                    <p className="text-white text-[16px] font-dm">No Product Found</p>
+                                                    <p className="text-white text-[16px] font-dm">
+                                                        No Product Found
+                                                    </p>
                                                 </div>
                                             )}
                                         </div>
@@ -123,61 +139,45 @@ const NavbarB = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="w-1/7">
-                            <div className="flex justify-end">
-                                <div className="relative">
-                                    <FaUser className='cursor-pointer w-[60px]' ref={accateref} />
-                                    {accate &&
-                                        <div className=" absolute top-[22px] right-0 z-99">
-                                            <div className="bg-black py-4 px-[59px] cursor-pointer">
-                                                <p className='text-white text-[14px] font-dm font-bold w-[84px] '>My Account</p>
-                                            </div>
-                                            <div className="">
-                                                <p className='text-black text-[14px] font-dm font-bold w-[-1px] text-center bg-white hover:bg-black hover:text-white py-4 px-[73px] cursor-pointer'>Log Out</p>
-                                            </div>
+
+                        {/* Account & Cart Section */}
+                        <div className="lg:w-1/7 md:w-1/4 w-full flex justify-end lg:justify-end gap-5">
+                            <div className="relative">
+                                <FaUser
+                                    className="cursor-pointer w-[20px] h-[30px]"
+                                    ref={accateref}
+                                />
+                                {accate && (
+                                    <div className="absolute top-[22px] right-0 z-50">
+                                        <div className="bg-black py-4 px-6 cursor-pointer">
+                                            <p className="text-white text-[14px] font-dm font-bold w-max">
+                                                My Account
+                                            </p>
                                         </div>
-                                    }
-                                </div>
-                                <div className="relative">
-                                    <Link to='cart'>
-                                        <FaShoppingCart className='ml-7 cursor-pointer w-[60px]' ref={accTwoateref} />
-                                    </Link>
-                                    <div className="absolute top-[-20px] right-0 ">
-                                        <h1 className='text-red-700 font-dm font-bold text-[14px] bg-green-500 py-[3px] px-[8px]  rounded-[50%]'>{cartData.length}</h1>
+                                        <div>
+                                            <p className="text-black text-[14px] font-dm font-bold text-center bg-white hover:bg-black hover:text-white py-4 px-8 cursor-pointer">
+                                                Log Out
+                                            </p>
+                                        </div>
                                     </div>
-                                    {/* {accateTwo &&
-                                        <div className="absolute top-8 lg:right-[-30px] right-[-20px] z-99">
-                                            <div className="bg-[#F5F5F3] py-5 w-[358px] pl-5">
-                                                <div className="flex items-center relative">
-                                                    <div className="h-[80px] w-[80px] bg-[#979797]"></div>
-                                                    <div className="pl-5">
-                                                        <p className='text-[#262626] text-[14px] font-dm font-bold w-[131px]'>Black Smart Watch</p>
-                                                        <p className='text-[#262626] text-[14px] font-dm font-bold'>$44.00</p>
-                                                    </div>
-                                                    <div className=""><RxCross2 className='absolute top-[40%] right-5 cursor-pointer' /></div>
-                                                </div>
-                                            </div>
-                                            <div className="pt-[14px] w-[358px] pl-5 pb-[36px] bg-[#FFff]">
-                                                <div className="">
-                                                    <span className='text-[#767676] text-[16px] font-dm font-normal'>Subtotal:</span><span className='text-[#262626] text-[14px] font-dm font-bold'>$44.00</span>
-                                                </div>
-                                                <div className="flex items-center mt-[25px]">
-                                                    <div className="">
-                                                        <a href="#" className='px-10 border-2 py-4 text-[#262626] text-[14px] font-dm font-bold hover:bg-black hover:text-white'>View Cart</a>
-                                                    </div>
-                                                    <div className="ml-4">
-                                                        <a href="#" className='px-10 border-2 py-4 text-[#262626] text-[14px] font-dm font-bold hover:bg-black hover:text-white'>Checkout</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    } */}
+                                )}
+                            </div>
+
+                            <div className="relative">
+                                <Link to="cart">
+                                    <FaShoppingCart className="cursor-pointer w-[20px] h-[30px]" />
+                                </Link>
+                                <div className="absolute top-[-8px] right-[-8px]">
+                                    <h1 className="text-white text-[12px] bg-green-500 lg:py-[3px] py-[2px] lg:px-[6px] px-[4px] rounded-full font-bold">
+                                        {cartData.length}
+                                    </h1>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+
         </>
     )
 }

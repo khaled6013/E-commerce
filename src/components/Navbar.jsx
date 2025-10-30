@@ -11,7 +11,7 @@ const Navbar = () => {
     
     return (
         <>
-            <div className="py-8">
+            <div className="lg:py-8 py-5">
                 <div className="lg:w-10/12 mx-auto w-11/12">
                     <div className="lg:flex items-center">
                         <div className="lg:w-2/6">
@@ -36,7 +36,7 @@ const Navbar = () => {
                                 </li>
                             </ul>
                         </div>
-                        <div className="lg:hidden absolute top-7 right-3" onClick={()=>setManu(!manu)}>
+                        <div className="lg:hidden absolute lg:top-7 top-5 right-3" onClick={()=>setManu(!manu)}>
                             {manu ? <RxCross2 className="text-[20px]" />:<FaBars className="text-[20px]" />}
                         </div>
                     </div>
