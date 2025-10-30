@@ -5,7 +5,7 @@ import addImg2 from '../assets/ad2.png'
 const Add = () => {
   return (
     <>
-     <div className="lg:pt-[100px] pt-[30px] lg:pb-[60px] pb-[20px]">
+     <div className="lg:pt-[100px] pt-[30px] lg:pb-[60px] pb-[12px]">
       <div className="lg:w-10/12 mx-auto w-11/12">
        <div className="flex lg:gap-x-8 gap-x-3">
         <div className="w-2/4">
