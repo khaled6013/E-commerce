@@ -340,8 +340,9 @@ const Arrivals = () => {
 
                   {/* Hover Box */}
                   <div className="absolute !w-full left-0 bottom-[60px] sm:bottom-[40px]">
-                    <div className="h-[0px] group-hover:h-[120px] duration-300 ease-in-out bg-white rounded-b-lg shadow-sm">
-                      <div className="pt-[24px] opacity-0 group-hover:opacity-95 transition-opacity duration-300">
+                    {/* Desktop & Tablet hover */}
+                    <div className="h-[0px] lg:group-hover:h-[120px] md:group-hover:h-[120px] duration-300 ease-in-out bg-white rounded-b-lg shadow-sm">
+                      <div className="pt-[24px] opacity-0 lg:group-hover:opacity-95 md:group-hover:opacity-95 transition-opacity duration-300">
                         {/* Wish List */}
                         <div className="flex items-center justify-end mr-3">
                           <p className="text-[#262626] hover:text-[#767676] text-[15px] sm:text-[13px] font-dm font-bold hover:font-normal pr-2 cursor-pointer">
@@ -363,6 +364,7 @@ const Arrivals = () => {
                       </div>
                     </div>
                   </div>
+
                 </div>
               ))}
             </Slider>
