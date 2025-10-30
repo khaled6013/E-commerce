@@ -3,56 +3,73 @@ import bannerImg from '../assets/banner.png'
 import { useSelector } from 'react-redux';
 
 const Banner = () => {
-    const settings = {
-    dots: true,
+  const settings = {
+    dots: true, // default: visible for large screens
     infinite: true,
-    arrows:false,
+    arrows: false,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
+
     appendDots: dots => (
       <div
         style={{
           borderRadius: "10px",
           padding: "10px",
-          position:'absolute',
-          top:'50%',
-          left:'8%',
-          transform:'translateY(-50%)',
+          position: "absolute",
+          top: "50%",
+          left: "8%",
+          transform: "translateY(-50%)",
         }}
       >
-        <ul style={{ margin: "0px" }}> {dots} </ul>
+        <ul style={{ margin: "0px" }}>{dots}</ul>
       </div>
     ),
+
     customPaging: i => (
       <div
         style={{
-          width:'30px',
-          padding:'12px 0px',
+          width: "30px",
+          padding: "12px 0px",
           color: "transparent",
-          borderRight:'3px solid #fff',
+          borderRight: "3px solid #fff",
         }}
       >
         0{i + 1}
       </div>
-    )
+    ),
+    responsive: [
+      {
+        breakpoint: 992,
+        settings: {
+          dots: false,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          dots: false,
+        },
+      },
+    ],
   };
-  let data = useSelector((state)=>state.product.number)
 
-  
+  let data = useSelector((state) => state.product.number)
+
+
   return (
     <>
       <div className="w-full">
         <Slider {...settings}>
-        <div className="">
+          <div className="">
             <img src={bannerImg} alt="" />
-        </div>
-        <div className="">
+          </div>
+          <div className="">
             <img src={bannerImg} alt="" />
-        </div>
-        <div className="">
+          </div>
+          <div className="">
             <img src={bannerImg} alt="" />
-        </div>
+          </div>
         </Slider>
       </div>
     </>
