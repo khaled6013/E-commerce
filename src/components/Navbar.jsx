@@ -26,7 +26,7 @@ const Navbar = () => {
                                     <Link to='/shop' className={`${location.pathname == "/shop" ? "font-bold text-[#262626]": "font-normal text-[#767676]" } text-[14px] font-dm  hover:font-bold`}>Shop</Link>
                                 </li>
                                 <li className='lg:pt-0 pt-1'>
-                                    <a href="#" className='text-[#767676] text-[14px] font-dm font-normal hover:font-bold'>About</a>
+                                    <Link to='/about' className={`${location.pathname == "/about" ? "font-bold text-[#262626]": "font-normal text-[#767676]" } text-[14px] font-dm  hover:font-bold`}>About</Link>
                                 </li>
                                 <li className='lg:pt-0 pt-1'>
                                     <a href="#" className='text-[#767676] text-[14px] font-dm font-normal hover:font-bold'>Contacts</a>

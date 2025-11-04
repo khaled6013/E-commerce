@@ -7,6 +7,7 @@ import Layout from './components/Layout'
 import ProductDetails from './pages/ProductDetails'
 import Cart from './components/Cart'
 import CheckOut from './components/CheckOut'
+import About from './pages/About'
 
 let router = createBrowserRouter(createRoutesFromElements(
   <Route element={<Layout></Layout>}>
@@ -15,6 +16,7 @@ let router = createBrowserRouter(createRoutesFromElements(
     <Route path='cart' element={<Cart></Cart>}></Route>
     <Route path='shop/:id' element={<ProductDetails></ProductDetails>}></Route>
     <Route path='checkout' element={<CheckOut></CheckOut>}></Route>
+    <Route path='about' element={<About></About>}></Route>
   </Route>
 ))
 
