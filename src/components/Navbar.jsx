@@ -29,7 +29,7 @@ const Navbar = () => {
                                     <Link to='/about' className={`${location.pathname == "/about" ? "font-bold text-[#262626]": "font-normal text-[#767676]" } text-[14px] font-dm  hover:font-bold`}>About</Link>
                                 </li>
                                 <li className='lg:pt-0 pt-1'>
-                                    <a href="#" className='text-[#767676] text-[14px] font-dm font-normal hover:font-bold'>Contacts</a>
+                                    <Link to='/contacts' className={`${location.pathname == "/contacts" ? "font-bold text-[#262626]": "font-normal text-[#767676]" } text-[14px] font-dm  hover:font-bold`}>Contacts</Link>
                                 </li>
                                 <li className='lg:pt-0 pt-1'>
                                     <a href="#" className='text-[#767676] text-[14px] font-dm font-normal hover:font-bold'>Journal</a>
