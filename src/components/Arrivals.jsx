@@ -305,7 +305,6 @@ const Arrivals = () => {
                   key={item.id}
                   className="!w-[90%] sm:!w-[95%] relative group mx-auto px-2"
                 >
-                  {/* Image */}
                   <div className="w-full">
                     <Link to="/shop">
                       <img
@@ -315,8 +314,6 @@ const Arrivals = () => {
                       />
                     </Link>
                   </div>
-
-                  {/* Title & Price */}
                   <div className="flex justify-between mt-4 sm:mt-3 z-10">
                     <p className="text-[#262626] text-[16px] sm:text-[14px] font-dm font-bold truncate">
                       {item.title}
@@ -325,36 +322,26 @@ const Arrivals = () => {
                       ${item.price}
                     </p>
                   </div>
-
-                  {/* Color */}
                   <p className="text-[#767676] text-[15px] sm:text-[13px] font-dm font-normal pt-2 sm:pt-1">
                     Black
                   </p>
-
-                  {/* New Tag */}
                   <div className="absolute top-2 left-2">
                     <p className="text-white text-[14px] sm:text-[12px] font-dm font-bold py-[6px] px-[24px] sm:px-[16px] bg-black hover:bg-[#2e2b2b] cursor-pointer rounded-md">
                       New
                     </p>
                   </div>
-
-                  {/* Hover Box */}
                   <div className="absolute !w-full left-0 bottom-[60px] sm:bottom-[40px]">
-                    {/* Desktop & Tablet hover */}
                     <div className="h-[0px] lg:group-hover:h-[120px] md:group-hover:h-[120px] duration-300 ease-in-out bg-white rounded-b-lg shadow-sm">
                       <div className="pt-[24px] opacity-0 lg:group-hover:opacity-95 md:group-hover:opacity-95 transition-opacity duration-300">
-                        {/* Wish List */}
                         <div className="flex items-center justify-end mr-3">
                           <p className="text-[#262626] hover:text-[#767676] text-[15px] sm:text-[13px] font-dm font-bold hover:font-normal pr-2 cursor-pointer">
                             Add to Wish List
                           </p>
                           <FaHeart />
                         </div>
-                        {/* Compare */}
                         <div className="flex items-center justify-end mr-3 mt-[14px]">
                           <FaCodeCompare />
                         </div>
-                        {/* Add to Cart */}
                         <div className="flex items-center justify-end mr-3 mt-[14px]">
                           <p className="text-[#262626] hover:text-[#767676] text-[15px] sm:text-[13px] font-dm font-bold hover:font-normal pr-2 cursor-pointer">
                             Add to Cart

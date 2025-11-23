@@ -57,18 +57,18 @@ const NavbarB = () => {
             <div className="bg-[#F5F5F3] lg:py-[20px] py-3 z-50 sticky top-0 right-0 left-0">
                 <div className="lg:w-10/12 mx-auto w-11/12">
                     <div className="flex items-center justify-between flex-wrap">
-                        {/* Category Section */}
                         <div className="lg:w-2/7 md:w-3/7 w-full relative mb-3 lg:mb-0">
                             <div className="flex items-center" >
+                                <div className="flex items-center" ref={cateref} >
                                 <img
                                     src={categoryIcon}
-                                    ref={cateref}
                                     alt="categoryIcon"
                                     className="lg:w-[22px] w-[16px] cursor-pointer"
                                 />
-                                <p className="text-[#262626] lg:text-[14px] text-[13px] font-dm font-normal pl-2 cursor-pointer" ref={cateref}>
+                                <p className="text-[#262626] lg:text-[14px] text-[13px] font-dm font-normal pl-2 cursor-pointer" >
                                     Shop by Category
                                 </p>
+                                </div>
                             </div>
 
                             {cate && (
@@ -100,8 +100,6 @@ const NavbarB = () => {
                                 </div>
                             )}
                         </div>
-
-                        {/* Search Section */}
                         <div className="lg:w-4/7 md:w-3/5 w-full mb-3 lg:mb-0">
                             <div className="flex justify-center lg:justify-start">
                                 <div className="relative w-full">
@@ -139,8 +137,6 @@ const NavbarB = () => {
                                 </div>
                             </div>
                         </div>
-
-                        {/* Account & Cart Section */}
                         <div className="lg:w-1/7 md:w-1/4 w-full flex justify-end lg:justify-end gap-5">
                             <div className="relative">
                                 <FaUser

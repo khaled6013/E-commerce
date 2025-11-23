@@ -64,11 +64,11 @@ const Cart = () => {
                         alt=""
                         className="w-[80px] md:w-[100px]"
                       />
-                      <p className="text-[16px] font-dm text-[#262626] font-bold">
+                      <p className="lg:text-[16px] text-[14px] font-dm text-[#262626] font-bold">
                         {item.title}
                       </p>
                     </div>
-                    <h1 className="text-[16px] font-dm text-[#262626] font-bold md:text-left text-right">
+                    <h1 className="lg:text-[16px] text-[14px] font-dm text-[#262626] font-bold md:text-left text-right">
                       $
                       {(
                         item.price -
@@ -92,7 +92,7 @@ const Cart = () => {
                         </button>
                       </div>
                     </div>
-                    <h1 className="text-[16px] font-dm text-[#262626] font-bold md:text-left text-right">
+                    <h1 className="lg:text-[16px] text-[14px] font-dm text-[#262626] font-bold md:text-left text-right">
                       $
                       {(
                         (item.price -
