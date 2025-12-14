@@ -35,10 +35,12 @@ const ChatWidget = () => {
 
     try {
       // ২. Google Generative AI কনফিগারেশন
-      const genAI = new GoogleGenerativeAI(GEMINI_API_KEY);
+      // const genAI = new GoogleGenerativeAI(GEMINI_API_KEY);
+      // GEMINI_API_KEY ভেরিয়েবল বাদ, সরাসরি স্ট্রিং দিন
+      const genAI = new GoogleGenerativeAI("AIzaSyB84WxrYfqlKbDs7wSlH-vlNvqZW7cQqlY");
       const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 
-      // ৩. চ্যাট হিস্ট্রি তৈরি (সিস্টেম প্রম্পট সহ)
+      // ৩. চ্যাট হিস্ট্রি তৈরি (সিস্টেম প্রম্পট সহ
       const chat = model.startChat({
         history: [
           {
