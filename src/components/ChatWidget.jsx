@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { GoogleGenerativeAI } from "@google/generative-ai"; // Google SDK
+import { GoogleGenAI } from "@google/genai"; 
 import { FaComments, FaTimes, FaPaperPlane, FaRobot } from 'react-icons/fa';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -12,8 +12,7 @@ const ChatWidget = () => {
   const [isLoading, setIsLoading] = useState(false);
   const messagesEndRef = useRef(null);
 
-  // ⚠️ আপনার API Key এখানে বসান
-  const GEMINI_API_KEY = "AIzaSyB84WxrYfqlKbDs7wSlH-vlNvqZW7cQqlY"; 
+  const GEMINI_API_KEY = "AIzaSyAHlMfSYWVtVJQG3f5i8KftXZu0ISUx6Gc"; 
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -25,8 +24,6 @@ const ChatWidget = () => {
 
   const handleSend = async () => {
     if (!input.trim()) return;
-
-    // ১. ইউজারের মেসেজ সেট করা
     const userText = input;
     const userMessage = { text: userText, sender: "user" };
     setMessages((prev) => [...prev, userMessage]);
@@ -34,39 +31,38 @@ const ChatWidget = () => {
     setIsLoading(true);
 
     try {
-      // ২. Google Generative AI কনফিগারেশন
-      const genAI = new GoogleGenerativeAI(GEMINI_API_KEY);
-      const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
-
-      // ৩. চ্যাট হিস্ট্রি তৈরি (সিস্টেম প্রম্পট সহ)
-      const chat = model.startChat({
-        history: [
-          {
-            role: "user",
-            parts: [{ text: "You are a helpful E-commerce support assistant. Answer in Bengali or English. Be concise." }],
-          },
-          {
-            role: "model",
-            parts: [{ text: "Okay, I understood. I will help customers with their shopping queries." }],
-          },
-          // আগের মেসেজগুলো লোড করা (যাতে কনটেক্সট মনে রাখে)
-          ...messages.slice(1).map(msg => ({
-             role: msg.sender === "user" ? "user" : "model",
-             parts: [{ text: msg.text }]
-          }))
-        ],
+      const ai = new GoogleGenAI({ apiKey: GEMINI_API_KEY });
+      const conversationHistory = [
+        {
+          role: "user",
+          parts: [{ text: "You are a helpful E-commerce support assistant. Answer in Bengali or English based on user query. Be concise." }],
+        },
+        {
+          role: "model",
+          parts: [{ text: "Okay, I understood. I will help customers with their shopping queries." }],
+        },
+        ...messages.slice(1).map(msg => ({
+           role: msg.sender === "user" ? "user" : "model",
+           parts: [{ text: msg.text }]
+        })),
+        {
+          role: "user",
+          parts: [{ text: userText }]
+        }
+      ];
+      const response = await ai.models.generateContent({
+        model: "gemini-2.5-flash", 
+        contents: conversationHistory, 
       });
 
-      // ৪. মেসেজ পাঠানো এবং রেসপন্স রিসিভ করা
-      const result = await chat.sendMessage(userText);
-      const response = await result.response;
-      const text = response.text();
+      const botResponseText = response.text; 
 
-      // ৫. বটের মেসেজ সেট করা
-      setMessages((prev) => [...prev, { text: text, sender: "bot" }]);
+      if (botResponseText) {
+        setMessages((prev) => [...prev, { text: botResponseText, sender: "bot" }]);
+      }
 
     } catch (error) {
-      console.error("Chat Error:", error); // কনসোলে আসল এরর দেখার জন্য
+      console.error("Chat Error:", error); 
       setMessages((prev) => [...prev, { text: "দুঃখিত, টেকনিক্যাল সমস্যার কারণে উত্তর দিতে পারছি না।", sender: "bot" }]);
     } finally {
       setIsLoading(false);
@@ -84,7 +80,6 @@ const ChatWidget = () => {
             transition={{ duration: 0.2 }}
             className="w-80 md:w-96 h-[500px] bg-white rounded-2xl shadow-2xl border border-gray-200 overflow-hidden flex flex-col mb-4"
           >
-            {/* Header */}
             <div className="bg-gradient-to-r from-blue-600 to-blue-500 p-4 flex justify-between items-center text-white shadow-md">
               <div className="flex items-center gap-2">
                 <div className="bg-white/20 p-2 rounded-full backdrop-blur-sm">
@@ -105,7 +100,6 @@ const ChatWidget = () => {
               </button>
             </div>
 
-            {/* Chat Body */}
             <div className="flex-1 p-4 overflow-y-auto bg-slate-50 flex flex-col gap-4 custom-scrollbar">
               {messages.map((msg, index) => (
                 <div 
@@ -135,7 +129,6 @@ const ChatWidget = () => {
               <div ref={messagesEndRef} />
             </div>
 
-            {/* Input Footer */}
             <div className="p-3 bg-white border-t border-gray-100">
               <div className="flex items-center gap-2 bg-gray-50 px-4 py-2 rounded-full border border-gray-200 focus-within:border-blue-500 focus-within:ring-1 focus-within:ring-blue-500 transition-all duration-200">
                 <input
@@ -166,7 +159,6 @@ const ChatWidget = () => {
         )}
       </AnimatePresence>
 
-      {/* Floating Toggle Button */}
       <motion.button
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
