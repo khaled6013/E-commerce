@@ -334,18 +334,15 @@ const Arrivals = () => {
                     <div className="h-[0px] lg:group-hover:h-[120px] md:group-hover:h-[120px] duration-300 ease-in-out bg-white rounded-b-lg shadow-sm">
                       <div className="pt-[24px] opacity-0 lg:group-hover:opacity-95 md:group-hover:opacity-95 transition-opacity duration-300">
                         <div className="flex items-center justify-end mr-3">
-                          <p className="text-[#262626] hover:text-[#767676] text-[15px] sm:text-[13px] font-dm font-bold hover:font-normal pr-2 cursor-pointer">
+                          <p className="text-[#262626] hover:text-[#767676] text-[18px] sm:text-[13px] font-dm font-bold hover:font-normal pr-2 cursor-pointer">
                             Add to Wish List
                           </p>
                           <FaHeart />
                         </div>
                         <div className="flex items-center justify-end mr-3 mt-[14px]">
-                          <FaCodeCompare />
-                        </div>
-                        <div className="flex items-center justify-end mr-3 mt-[14px]">
-                          <p className="text-[#262626] hover:text-[#767676] text-[15px] sm:text-[13px] font-dm font-bold hover:font-normal pr-2 cursor-pointer">
+                          <Link to="/shop" className="text-[#262626] hover:text-[#767676] text-[18px] sm:text-[13px] font-dm font-bold hover:font-normal pr-2 cursor-pointer">
                             Add to Cart
-                          </p>
+                          </Link>
                           <FaShoppingCart />
                         </div>
                       </div>
