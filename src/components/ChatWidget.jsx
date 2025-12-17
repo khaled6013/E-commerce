@@ -12,8 +12,8 @@ const ChatWidget = () => {
   const [isLoading, setIsLoading] = useState(false);
   const messagesEndRef = useRef(null);
 
-  const GEMINI_API_KEY = "AIzaSyAHlMfSYWVtVJQG3f5i8KftXZu0ISUx6Gc"; 
-
+  const GEMINI_API_KEY = import.meta.env.VITE_API_KEY;
+  
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   };
