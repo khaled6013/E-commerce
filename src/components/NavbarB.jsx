@@ -14,6 +14,8 @@ const NavbarB = () => {
     let cateref = useRef()
     let accateref = useRef()
     let accTwoateref = useRef()
+    let searchRef = useRef() 
+
     let [cate, setCeta] = useState(false)
     let [accate, setacCeta] = useState(false)
     let [accateTwo, setacCetaTwo] = useState(false)
@@ -23,24 +25,33 @@ const NavbarB = () => {
     let data = useContext(Apidata)
 
     useEffect(() => {
-        document.addEventListener("click", (e) => {
-            if (cateref.current.contains(e.target) == true) {
+        let handler = (e) => {
+            if (cateref.current && cateref.current.contains(e.target)) {
                 setCeta(!cate)
             } else {
                 setCeta(false)
             }
-            if (accateref.current.contains(e.target) == true) {
+            if (accateref.current && accateref.current.contains(e.target)) {
                 setacCeta(!accate)
             } else {
                 setacCeta(false)
             }
-            if (accTwoateref.current.contains(e.target) == true) {
+            if (accTwoateref.current && accTwoateref.current.contains(e.target)) {
                 setacCetaTwo(!accateTwo)
             } else {
                 setacCetaTwo(false)
             }
-        });
-    }, [])
+
+            if (searchRef.current && !searchRef.current.contains(e.target)) {
+                setSearchModel(false)
+            }
+        };
+
+        document.addEventListener("mousedown", handler);
+        return () => {
+            document.removeEventListener("mousedown", handler);
+        }
+    }, [cate, accate, accateTwo])
 
     let handleSearch = (e) => {
         if (e.target.value) {
@@ -102,7 +113,7 @@ const NavbarB = () => {
                         </div>
                         <div className="lg:w-4/7 md:w-3/5 w-full mb-3 lg:mb-0">
                             <div className="flex justify-center lg:justify-start">
-                                <div className="relative w-full">
+                                <div className="relative w-full" ref={searchRef}>
                                     <form className="" onChange={handleSearch}>
                                         <input
                                             type="text"
@@ -116,7 +127,7 @@ const NavbarB = () => {
                                         <div className="w-full absolute left-0 z-50 h-[250px] bg-[#262626] overflow-y-scroll">
                                             {search.length > 0 ? (
                                                 search.map((item) => (
-                                                    <Link to={`/shop/${item.id}`} key={item.id}>
+                                                    <Link to={`/shop/${item.id}`} key={item.id} onClick={() => setSearchModel(false)}>
                                                         <div className="flex items-center gap-3 hover:bg-gray-600 border-b-[1px] border-[#262626] cursor-pointer p-2">
                                                             <img src={item.thumbnail} alt="" className="w-[40px]" />
                                                             <p className="text-[16px] text-white font-dm">
