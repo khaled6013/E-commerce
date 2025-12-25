@@ -7,7 +7,6 @@ import { Link, useLocation } from "react-router-dom";
 const Navbar = () => {
     let [manu, setManu] = useState(false)
     let location = useLocation()
-    console.log();
 
     return (
         <>
