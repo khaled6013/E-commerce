@@ -3,6 +3,7 @@ import Navbar from "./Navbar"
 import NavbarB from "./NavbarB"
 import Footer from "./Footer"
 import ChatWidget from "./ChatWidget"
+import ScrollToTop from "./ScrollToTop"
 
 const Layout = () => {
   return (
@@ -12,6 +13,7 @@ const Layout = () => {
      <Outlet></Outlet>
      <Footer></Footer>
      <ChatWidget></ChatWidget>
+     <ScrollToTop></ScrollToTop>
     </>
   )
 }
