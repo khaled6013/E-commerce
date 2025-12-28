@@ -340,7 +340,7 @@ const Arrivals = () => {
                           <FaHeart />
                         </div>
                         <div className="flex items-center justify-end mr-3 mt-[14px]">
-                          <Link to="/shop" className="text-[#262626] hover:text-[#767676] text-[18px] sm:text-[13px] font-dm font-bold hover:font-normal pr-2 cursor-pointer">
+                          <Link to={`/shop/${item.id}`} className="text-[#262626] hover:text-[#767676] text-[18px] sm:text-[13px] font-dm font-bold hover:font-normal pr-2 cursor-pointer">
                             Add to Cart
                           </Link>
                           <FaShoppingCart />
