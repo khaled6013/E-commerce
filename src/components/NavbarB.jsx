@@ -173,12 +173,12 @@ const NavbarB = () => {
                             <div className="relative">
                                 <Link to="cart">
                                     <FaShoppingCart className="cursor-pointer w-[20px] h-[30px]" />
-                                </Link>
                                 <div className="absolute top-[-8px] right-[-8px]">
                                     <h1 className="text-white text-[12px] bg-green-500 lg:py-[3px] py-[2px] lg:px-[6px] px-[4px] rounded-full font-bold">
                                         {cartData.length}
                                     </h1>
                                 </div>
+                                </Link>
                             </div>
                         </div>
                     </div>
