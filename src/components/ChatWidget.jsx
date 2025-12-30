@@ -63,7 +63,7 @@ const ChatWidget = () => {
 
     } catch (error) {
       console.error("Chat Error:", error); 
-      setMessages((prev) => [...prev, { text: "দুঃখিত, টেকনিক্যাল সমস্যার কারণে উত্তর দিতে পারছি না।", sender: "bot" }]);
+      setMessages((prev) => [...prev, { text: "We apologize for the inconvenience. We are currently experiencing technical difficulties.", sender: "bot" }]);
     } finally {
       setIsLoading(false);
     }
