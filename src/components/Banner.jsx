@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 
 const Banner = () => {
   const settings = {
-    dots: true, // default: visible for large screens
+    dots: true, 
     infinite: true,
     arrows: false,
     speed: 500,
@@ -62,13 +62,13 @@ const Banner = () => {
       <div className="w-full">
         <Slider {...settings}>
           <div className="">
-            <img src={bannerImg} alt="" />
+            <img src={bannerImg} alt="bannerImg"/>
           </div>
           <div className="">
-            <img src={bannerImg} alt="" />
+            <img src={bannerImg} alt="bannerImg"/>
           </div>
           <div className="">
-            <img src={bannerImg} alt="" />
+            <img src={bannerImg} alt="bannerImg"/>
           </div>
         </Slider>
       </div>
