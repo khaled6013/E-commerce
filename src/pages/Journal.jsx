@@ -1,8 +1,11 @@
 import React from 'react'
+import JournalBanner from '../components/JournalBanner'
 
 const Journal = () => {
   return (
-    <div>Journal</div>
+    <div>
+        <JournalBanner></JournalBanner>
+    </div>
   )
 }
 
