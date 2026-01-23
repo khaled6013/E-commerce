@@ -9,6 +9,7 @@ import Cart from './components/Cart'
 import CheckOut from './components/CheckOut'
 import About from './pages/About'
 import Contacts from './pages/Contacts'
+import Journal from './pages/Journal'
 
 let router = createBrowserRouter(createRoutesFromElements(
   <Route element={<Layout></Layout>}>
@@ -19,6 +20,7 @@ let router = createBrowserRouter(createRoutesFromElements(
     <Route path='checkout' element={<CheckOut></CheckOut>}></Route>
     <Route path='about' element={<About></About>}></Route>
     <Route path='contacts' element={<Contacts></Contacts>}></Route>
+    <Route path='journal' element={<Journal></Journal>}></Route>
   </Route>
 ))
 
